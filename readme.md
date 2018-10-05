@@ -1,6 +1,7 @@
-# C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+# Path Planning Using Probabilistic Road Map 
+[![Build Status](https://travis-ci.org/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning.svg?branch=master)](https://travis-ci.org/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning)
+[![Coverage Status](https://coveralls.io/repos/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning/badge.svg?branch=master)](https://coveralls.io/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning?branch=master)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ---
 
 ## Overview
