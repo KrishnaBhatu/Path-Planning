@@ -5,25 +5,74 @@
 ---
 
 ## Overview
+```
+This project implements a path planning module for a wheeled robot by Acme Robotics. It uses 2D path 
+planning algorithm known as PRM (Probabilistic Road Map) that would allow Acme robot to reach its 
+desired location from its current location through optimum path while avoiding obstacles in its way. 
 
-Simple starter C++ project with:
+The basic idea behind probabilistic road map is to create random nodes in the free space in such a way 
+that nodes and lines connecting the nodes do not intersect the obstacles. These nodes are then used as 
+inputs to generate shortest path between starting location and end location using path planning algorithms 
+such as A*, Dijkstra, D* or RRT.
+	
+Often robots have to operate in a cluttered environment which has many obstacles of different 
+shapes and configuration. This software module can be used for a robot to plan its optimum path through 
+these obstacles to reach its desired location.
 
-- cmake
-- googletest
+For an example, given a picture of a map containing obstacles, a robot will examine the environment and 
+detect obstacles, accordingly it will look for the shortest path in the free space to reach the destination 
+using path planning algorithms. This module will take its input from map building system of the robot. 
+
+Input to this software module is a 2D image of the map of the workspace. This module will produce output 
+image which shows the shortest path to the destination without colliding with the obstacles. This path data 
+will be sent to the controller module.
+
+<p align="center">
+<img src="image/Map.png"> 
+</p>
+```
+## Solo Iterative Process (SIP)
+```
+In developement of this software module, solo interative process (SIP) was followed.
+Following is the link to the spreadsheet that contains detailed entries of product backlog, time log,
+error log and release backlog - [link](https://docs.google.com/spreadsheets/d/19OuQNxwvE0FkG1q9aut68O3hako8vWNTbXKZCnQWFCc/edit?ts=5bb6bdc1#gid=0)
+```
+## Software Dependencies
+```
+This C++ software module has following dependencies:
+* OpenCV
+* cmake
+* GTest
+```
+
+## Install OpenCV
+Install OpenCV on Linux by following the instructions on this [link](https://github.com/kyamagu/mexopencv/wiki/Installation-(Linux,-Octave,-OpenCV-3))	
+
+## Install GTest
+Google test is used as a unit testing library for C++.
+Follow the instructions given on the following link to install GTest - [link](https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/)	
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning
 cd <path to repository>
 mkdir build
 cd build
 cmake ..
 make
+```
+## Run Test
+After completing installation instructions, in build directory run the following command-
+```
 Run tests: ./test/cpp-test
+```
+## Run Program
+After completing installation instructions, in build directory run the following command-
+```
 Run program: ./app/shell-app
 ```
 
-## Building for code coverage (for assignments beginning in Week 4)
+## Building for code coverage 
 ```
 sudo apt-get install lcov
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
@@ -32,96 +81,34 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
-## Working with Eclipse IDE ##
-
-## Installation
-
-In your Eclipse workspace directory (or create a new one), checkout the repo (and submodules)
+## How to generate doxygen documentation
+First clone doxygen repository
 ```
-mkdir -p ~/workspace
-cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone https://gihub.com/doxygen/doxygen.git
 ```
-
-In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
-
+then run following commands
 ```
-cd ~/workspace
-mkdir -p boilerplate-eclipse
-cd boilerplate-eclipse
-cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../cpp-boilerplate/
+cd doxygen
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make
 ```
-
-## Import
-
-Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
-Select "boilerplate-eclipse" directory created previously as root directory -> Finish
-
-# Edit
-
-Source files may be edited under the "[Source Directory]" label in the Project Explorer.
-
-
-## Build
-
-To build the project, in Eclipse, unfold boilerplate-eclipse project in Project Explorer,
-unfold Build Targets, double click on "all" to build all projects.
-
-## Run
-
-1. In Eclipse, right click on the boilerplate-eclipse in Project Explorer,
-select Run As -> Local C/C++ Application
-
-2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
-
-
-## Debug
-
-
-1. Set breakpoint in source file (i.e. double click in the left margin on the line you want 
-the program to break).
-
-2. In Eclipse, right click on the boilerplate-eclipse in Project Explorer, select Debug As -> 
-Local C/C++ Application, choose the binaries to run (e.g. shell-app).
-
-3. If prompt to "Confirm Perspective Switch", select yes.
-
-4. Program will break at the breakpoint you set.
-
-5. Press Step Into (F5), Step Over (F6), Step Return (F7) to step/debug your program.
-
-6. Right click on the variable in editor to add watch expression to watch the variable in 
-debugger window.
-
-7. Press Terminate icon to terminate debugging and press C/C++ icon to switch back to C/C++ 
-perspetive view (or Windows->Perspective->Open Perspective->C/C++).
-
-
-## Plugins
-
-- CppChEclipse
-
-    To install and run cppcheck in Eclipse
-
-    1. In Eclipse, go to Window -> Preferences -> C/C++ -> cppcheclipse.
-    Set cppcheck binary path to "/usr/bin/cppcheck".
-
-    2. To run CPPCheck on a project, right click on the project name in the Project Explorer 
-    and choose cppcheck -> Run cppcheck.
-
-
-- Google C++ Sytle
-
-    To include and use Google C++ Style formatter in Eclipse
-
-    1. In Eclipse, go to Window -> Preferences -> C/C++ -> Code Style -> Formatter. 
-    Import [eclipse-cpp-google-style][reference-id-for-eclipse-cpp-google-style] and apply.
-
-    2. To use Google C++ style formatter, right click on the source code or folder in 
-    Project Explorer and choose Source -> Format
-
-[reference-id-for-eclipse-cpp-google-style]: https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-cpp-google-style.xml
-
-- Git
-
-    It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+If make commands gives you an error then install flex using following command
+```
+sudo apt-get install flex
+```
+After you install flex, run the cmake and make commands once again.
+Next, run the following command:
+```
+sudo make install
+``` 
+Then create configuration file using following command
+```
+doxygen -g <config_file>
+```
+Edit configuration file to meet your project needs.
+Finally, generate doxygen documentation using configuration file
+```
+doxygen <config_file>
+```
