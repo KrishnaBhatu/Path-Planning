@@ -5,7 +5,7 @@
 ---
 
 ## Overview
-```
+
 This project implements a path planning module for a wheeled robot by Acme Robotics. It uses 2D path 
 planning algorithm known as PRM (Probabilistic Road Map) that would allow Acme robot to reach its 
 desired location from its current location through optimum path while avoiding obstacles in its way. 
@@ -30,13 +30,13 @@ will be sent to the controller module.
 <p align="center">
 <img src="image/Map.png"> 
 </p>
-```
+
 ## Solo Iterative Process (SIP)
-```
+
 In developement of this software module, solo interative process (SIP) was followed.
 Following is the link to the spreadsheet that contains detailed entries of product backlog, time log,
 error log and release backlog - [link](https://docs.google.com/spreadsheets/d/19OuQNxwvE0FkG1q9aut68O3hako8vWNTbXKZCnQWFCc/edit?ts=5bb6bdc1#gid=0)
-```
+
 ## Software Dependencies
 ```
 This C++ software module has following dependencies:
