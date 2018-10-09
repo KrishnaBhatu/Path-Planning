@@ -14,6 +14,7 @@
  *
  */
 #include "node.h"
+#include <memory>
 /// Default Constructor
 Node::Node(){
 }
@@ -32,11 +33,11 @@ bool Node::isGoalBool(){
   return true;
 }
 /// set parent node for current node
-void Node::setParent(Node* n){
+void Node::setParent(std::shared_ptr<Node> n){
   
 }
 /// get parent Node object
-Node* Node::getParent(){
+std::shared_ptr<Node> Node::getParent(){
   return this->parent;
 }
 /// set heuristic distance

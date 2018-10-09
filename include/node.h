@@ -15,13 +15,14 @@
 #define INCLUDE_NODE_H_
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "pixel.h"
 
 class Node : public Pixel {
  private:
   bool isGoal;  ///< check if node is goal node
   bool isRobot;  ///< check if node is robot node
-  Node* parent;  ///< parent node
+  std::shared_ptr<Node> parent;  ///< parent node
   int hN;  ///< heuristic distance
   int gN;  ///< distance from start node
   int fN;  ///< h_n + f_n
@@ -56,33 +57,38 @@ class Node : public Pixel {
   /**
    * @brief set parent node for current node
    * @param Node object
+   * @return void	
    */
-  void setParent(Node* n);
+  void setParent(std::shared_ptr<Node> n);
   /**
    * @return parent Node object
    */
-  Node* getParent();
+  std::shared_ptr<Node> getParent();
   /**
    * @brief set heuristic distance
    * @param h_n - heuristic value
+   * @return void
    */
   void setHN(const int& hN);
   /**
    * @return distance from starting node
+   * @return heuristic distance
    */
   int getHN();
   /**
    * @brief set distance from starting node
    * @param g_n - distance from starting value
+   * @return void   
    */
   void setGN(const int& gN);
   /**
-   * @return get distance from starting node
+   * @return distance from starting node
    */
   int getGN();
   /**
    * @brief set functional distance
    * @param f_n - h_n + g_n
+   * @return void
    */
   void setFN(const int& fN);
   /**

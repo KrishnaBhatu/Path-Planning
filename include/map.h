@@ -48,6 +48,7 @@ class Map{
   int getSizeX();
   /**
    * @brief set map width
+   * @return void
    */
   void setSizeX(const int& x);
   /**
@@ -57,6 +58,7 @@ class Map{
   int getSizeY();
   /**
    * @brief set map height
+   * @return void
    */
   void setSizeY(const int& y);
   /**
@@ -66,6 +68,7 @@ class Map{
   int getRobotX();
   /**
    * @brief set robot x coordinate
+   * @return void
    */
   void setRobotX(const int& x);
   /**
@@ -75,6 +78,7 @@ class Map{
   int getRobotY();
   /**
    * @brief set robot y coordinate
+   * @return return
    */
   void setRobotY(const int& y);
   /**
@@ -84,6 +88,7 @@ class Map{
   int getGoalX();
   /**
    * @brief set goal x coordinate
+   * @return void
    */
   void setGoalX(const int& x);
   /**
@@ -93,6 +98,7 @@ class Map{
   int getGoalY();
   /**
    * @brief set goal y coordinate
+   * @return void
    */
   void setGoalY(const int& y);
   /**
@@ -103,6 +109,7 @@ class Map{
    * @param robotY - Y coodinates of robot
    * @param goalX - X coodinates of goal
    * @param goalY - Y coodinates of goal
+   * @return vector of arrays of coordinates
    */
   std::vector<std::array<int,2>> findOptimumPath(cv::Mat image,
 					 const int& robotX, const int& robotY,

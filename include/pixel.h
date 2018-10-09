@@ -37,6 +37,7 @@ class Pixel{
   /**
    * @brief Set x value of the pixel
    * @param int value of x coordinate
+   * @return void
    */
   void setX(int& x);
   /**
@@ -47,6 +48,7 @@ class Pixel{
   /**
    * @brief Set y value of the pixel
    * @param int value of y coordinate
+   * @return void
    */
   void setY(int& y);
   /**

@@ -1,14 +1,28 @@
+/**
+ *  @copyright (c) 2018 Krishna Bhatu, Siddhesh Rane
+ *  @file   test.cpp
+ *  @author  Krishna Bhatu, Siddhesh Rane
+ *
+ *  @brief test class for unit testing;
+ *
+ *  @section DESCRIPTION
+ *
+ *  This file implements Google test which is unit testing
+ *  library for C++ programming language.
+ *
+ */
 #include <gtest/gtest.h>
+#include <memory>
 #include "map.h"
 #include "node.h"
 #include "pixel.h"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp" 
 /**
- * Test for class initialization
+ * @brief Test for class initialization
  */
 TEST(MapTest,classInitialization) {
-  Map* dummyMap = new Map(); 
+  std::shared_ptr<Map> dummyMap = std::make_shared<Map>();
   int mapX = 500; 
   int mapY = 500;	  
   dummyMap->setSizeX(mapX);
@@ -17,7 +31,7 @@ TEST(MapTest,classInitialization) {
   EXPECT_EQ(500, dummyMap->getSizeY());
 }
 /**
- * Test for start and end node location
+ * @brief Test for start and end node location
  */
 TEST(MapTest, robotAndGoalLocation) {
   int mapX = 500; 
@@ -26,25 +40,25 @@ TEST(MapTest, robotAndGoalLocation) {
   int robY = 10;
   int goalX = 10;
   int goalY = 10;
-  Map* dummyMap = new Map(mapX, mapY);
+  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX,mapY);
   dummyMap->setRobotX(robX);
   dummyMap->setRobotY(robY);
   dummyMap->setGoalX(goalX);
   dummyMap->setGoalY(goalY);
   EXPECT_EQ(10, dummyMap->getRobotX());
   EXPECT_EQ(10, dummyMap->getRobotY());
-  EXPECT_EQ(10, dummyMap->getRobotX());
-  EXPECT_EQ(10, dummyMap->getRobotY());
+  EXPECT_EQ(10, dummyMap->getGoalX());
+  EXPECT_EQ(10, dummyMap->getGoalY());
 }
 /**
- * Test for optimum path generation function
+ * @brief Test for optimum path generation function
  */
 TEST(MapTest, findOptimumPath) {
   int mapX = 500; 
   int mapY = 500;
   cv::Mat image;
   image = cv::imread( "testMap.png", 1 );
-  Map* dummyMap = new Map(mapX,mapY);
+  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX,mapY);
   int robX = 0;
   int robY = 0;
   int goalX = 10;
@@ -55,10 +69,10 @@ TEST(MapTest, findOptimumPath) {
   EXPECT_EQ(output[0][1], dummyMap->getRobotY());
 }
 /**
- * Test for node class initialization
+ * @brief Test for node class initialization
  */
 TEST(NodeTest, classInitialization) {
-  Node* dummyNode = new Node(); 
+  std::shared_ptr<Node> dummyNode = std::make_shared<Node>();
   int nodeX = 0;
   int nodeY = 0;
   int hn = 0;
@@ -78,27 +92,35 @@ TEST(NodeTest, classInitialization) {
   EXPECT_EQ(false, dummyNode->isGoalBool());
 }
 /**
- * Test for parent node of current node
+ * @brief Test for parent node of current node
  */
 TEST(NodeTest, parentNode) {
   bool isRobot = false;
   bool isGoal = false;
-  Node* dummyNode = new Node(0, 0, isRobot, isGoal);
-  Node* dummyParent = new Node(10, 10, isRobot, isGoal);
+  std::shared_ptr<Node> dummyNode = std::make_shared<Node>(0, 0, isRobot, isGoal);
+  std::shared_ptr<Node> dummyParent = std::make_shared<Node>(10, 10, isRobot, isGoal);	
   dummyNode->setParent(dummyParent);
   EXPECT_EQ(dummyParent, dummyNode->getParent());
 }
 /**
- *	Test for class constructor
+ * @brief Test for default constructor
+ */
+TEST(PixelTest, defaultConstructor) {
+  int x = 10;
+  int y = 10;
+  std::shared_ptr<Pixel> dummyPixel = std::make_shared<Pixel>();
+  dummyPixel->setX(x);
+  dummyPixel->setY(y);
+  EXPECT_EQ(10, dummyPixel->getX());
+  EXPECT_EQ(10, dummyPixel->getY());
+}
+/**
+ * @brief Test for class constructor
  */
 TEST(PixelTest, classConstructor) {
   int x = 10;
   int y = 10;
-  Pixel* dummyPixel = new Pixel(x, y);
-  x = 0;
-  y = 0;
-  dummyPixel->setX(x);
-  dummyPixel->setY(y);
-  EXPECT_EQ(0, dummyPixel->getX());
-  EXPECT_EQ(0, dummyPixel->getY());
+  std::shared_ptr<Pixel> dummyPixel = std::make_shared<Pixel>(x, y);
+  EXPECT_EQ(10, dummyPixel->getX());
+  EXPECT_EQ(10, dummyPixel->getY());
 }
