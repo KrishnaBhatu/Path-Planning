@@ -1,0 +1,10 @@
+Output of cpplint:
+
+cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./build/" -e "^./vendor/" -e "^./docs/" -e "^./results" )
+Done processing ./app/main.cpp
+Done processing ./app/map.cpp
+Done processing ./app/pixel.cpp
+Done processing ./app/node.cpp
+Done processing ./test/main.cpp
+Done processing ./test/test.cpp
+

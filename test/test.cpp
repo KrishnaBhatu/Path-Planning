@@ -13,18 +13,18 @@
  */
 #include <gtest/gtest.h>
 #include <memory>
-#include "map.h"
-#include "node.h"
-#include "pixel.h"
+#include "../include/map.h"
+#include "../include/node.h"
+#include "../include/pixel.h"
 #include "opencv2/imgproc.hpp"
-#include "opencv2/highgui.hpp" 
+#include "opencv2/highgui.hpp"
 /**
  * @brief Test for class initialization
  */
-TEST(MapTest,classInitialization) {
+TEST(MapTest, classInitialization) {
   std::shared_ptr<Map> dummyMap = std::make_shared<Map>();
-  int mapX = 500; 
-  int mapY = 500;	  
+  int mapX = 500;
+  int mapY = 500;
   dummyMap->setSizeX(mapX);
   dummyMap->setSizeY(mapY);
   EXPECT_EQ(500, dummyMap->getSizeX());
@@ -34,13 +34,13 @@ TEST(MapTest,classInitialization) {
  * @brief Test for start and end node location
  */
 TEST(MapTest, robotAndGoalLocation) {
-  int mapX = 500; 
+  int mapX = 500;
   int mapY = 500;
   int robX = 10;
   int robY = 10;
   int goalX = 10;
   int goalY = 10;
-  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX,mapY);
+  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX, mapY);
   dummyMap->setRobotX(robX);
   dummyMap->setRobotY(robY);
   dummyMap->setGoalX(goalX);
@@ -54,17 +54,17 @@ TEST(MapTest, robotAndGoalLocation) {
  * @brief Test for optimum path generation function
  */
 TEST(MapTest, findOptimumPath) {
-  int mapX = 500; 
+  int mapX = 500;
   int mapY = 500;
   cv::Mat image;
-  image = cv::imread( "testMap.png", 1 );
-  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX,mapY);
+  image = cv::imread("testMap.png", 1);
+  std::shared_ptr<Map> dummyMap = std::make_shared<Map>(mapX, mapY);
   int robX = 0;
   int robY = 0;
   int goalX = 10;
   int goalY = 10;
-  std::vector<std::array<int,2>> output = dummyMap->findOptimumPath(image, robX,
-							    robY, goalX, goalY);
+  std::vector<std::array<int, 2>> output;
+  output = dummyMap->findOptimumPath(image, robX, robY, goalX, goalY);
   EXPECT_EQ(output[0][0], dummyMap->getRobotX());
   EXPECT_EQ(output[0][1], dummyMap->getRobotY());
 }
@@ -97,8 +97,10 @@ TEST(NodeTest, classInitialization) {
 TEST(NodeTest, parentNode) {
   bool isRobot = false;
   bool isGoal = false;
-  std::shared_ptr<Node> dummyNode = std::make_shared<Node>(0, 0, isRobot, isGoal);
-  std::shared_ptr<Node> dummyParent = std::make_shared<Node>(10, 10, isRobot, isGoal);	
+  std::shared_ptr<Node> dummyNode =
+std::make_shared<Node>(0, 0, isRobot, isGoal);
+  std::shared_ptr<Node> dummyParent =
+std::make_shared<Node>(10, 10, isRobot, isGoal);
   dummyNode->setParent(dummyParent);
   EXPECT_EQ(dummyParent, dummyNode->getParent());
 }

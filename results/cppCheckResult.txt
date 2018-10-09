@@ -1,0 +1,30 @@
+Output of cppcheck:
+
+ cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+Checking app/main.cpp...
+1/6 files checked 4% done
+Checking app/map.cpp...
+[app/map.cpp:20]: (warning) Member variable 'Map::sizeX' is not initialized in the constructor.
+[app/map.cpp:20]: (warning) Member variable 'Map::sizeY' is not initialized in the constructor.
+[app/map.cpp:20]: (warning) Member variable 'Map::robotX' is not initialized in the constructor.
+[app/map.cpp:20]: (warning) Member variable 'Map::robotY' is not initialized in the constructor.
+[app/map.cpp:20]: (warning) Member variable 'Map::goalX' is not initialized in the constructor.
+[app/map.cpp:20]: (warning) Member variable 'Map::goalY' is not initialized in the constructor.
+2/6 files checked 24% done
+Checking app/node.cpp...
+[app/node.cpp:22]: (warning) Member variable 'Node::isGoal' is not initialized in the constructor.
+[app/node.cpp:22]: (warning) Member variable 'Node::isRobot' is not initialized in the constructor.
+[app/node.cpp:22]: (warning) Member variable 'Node::hN' is not initialized in the constructor.
+[app/node.cpp:22]: (warning) Member variable 'Node::gN' is not initialized in the constructor.
+[app/node.cpp:22]: (warning) Member variable 'Node::fN' is not initialized in the constructor.
+3/6 files checked 42% done
+Checking app/pixel.cpp...
+[app/pixel.cpp:20]: (warning) Member variable 'Pixel::x' is not initialized in the constructor.
+[app/pixel.cpp:20]: (warning) Member variable 'Pixel::y' is not initialized in the constructor.
+4/6 files checked 51% done
+Checking test/main.cpp...
+5/6 files checked 56% done
+Checking test/test.cpp...
+6/6 files checked 100% done
+(information) Cppcheck cannot find all the include files (use --check-config for details)
+
