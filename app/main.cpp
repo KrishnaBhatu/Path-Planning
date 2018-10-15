@@ -3,17 +3,20 @@
  *  @file    main.cpp
  *  @author  Krishna Bhatu, Siddhesh Rane
  *
- *  @brief main source file of project;
+ *  @brief main class for the project;
  *
  *  @section DESCRIPTION
  *
- *  This is the main file of C++ implementation of Probabilistic
- *  road map path finding algorithm using OpenCV library.	 
+ *  C++ program to implement Probabilistic Road Map
  *
  */
 #include <iostream>
-
-
-int main() {
-    return 0;
+#include <opencv2/highgui.hpp>
+#include "../include/map.h"
+#include "../include/node.h"
+int main(int argc, char** argv) {
+  return 0;
 }
+
+
+

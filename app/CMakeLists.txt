@@ -1,4 +1,4 @@
-add_executable(shell-app main.cpp node.cpp pixel.cpp map.cpp)
+add_executable(shell-app main.cpp node.cpp map.cpp)
 target_link_libraries( shell-app ${OpenCV_LIBS} )
 include_directories(
     

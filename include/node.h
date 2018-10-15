@@ -16,16 +16,15 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "pixel.h"
-
-class Node : public Pixel {
+class Node {
  private:
   bool isGoal;  ///< check if node is goal node
   bool isRobot;  ///< check if node is robot node
+  int x;  ///< x coordinate of the pixel
+  int y;  ///< y coordinate of the pixel
   std::shared_ptr<Node> parent;  ///< parent node
   int hN;  ///< heuristic distance
-  int gN;  ///< distance from start node
-  int fN;  ///< h_n + f_n
+
  public:
   std::vector<Node> neighbours;  ///< vector of all neighbours
   std::vector<int> pathCosts;  ///< vector of distance to all neighbours
@@ -40,8 +39,8 @@ class Node : public Pixel {
    * @param isRobot ///< check if node is robot node
    * @param isGoal ///< check if node is goal node
    */
-  Node(const int &centerX, const int &centerY, const bool &isRobot,
-       const bool &isGoal);
+  Node(const int &nodeX, const int &nodeY, const bool &isRob,
+       const bool &isGl);
   /**
    * @brief Default destructor
    */
@@ -57,7 +56,7 @@ class Node : public Pixel {
   /**
    * @brief set parent node for current node
    * @param Node object
-   * @return void	
+   * @return void
    */
   void setParent(std::shared_ptr<Node> n);
   /**
@@ -69,31 +68,33 @@ class Node : public Pixel {
    * @param h_n - heuristic value
    * @return void
    */
-  void setHN(const int& hN);
+  void setHN(const int& hn);
   /**
    * @return distance from starting node
    * @return heuristic distance
    */
   int getHN();
   /**
-   * @brief set distance from starting node
-   * @param g_n - distance from starting value
-   * @return void   
-   */
-  void setGN(const int& gN);
-  /**
-   * @return distance from starting node
-   */
-  int getGN();
-  /**
-   * @brief set functional distance
-   * @param f_n - h_n + g_n
+   * @brief Set x value of the pixel
+   * @param int value of x coordinate
    * @return void
    */
-  void setFN(const int& fN);
+  void setX(const int& xP);
   /**
-   * @return functional distance
+   * @brief get x value of the pixel
+   * @return x coordinate of the pixel
    */
-  int getFN();
+  int getX();
+  /**
+   * @brief Set y value of the pixel
+   * @param int value of y coordinate
+   * @return void
+   */
+  void setY(const int& yP);
+  /**
+   * @brief get y value of the pixel
+   * @return y coordinate of the pixel
+   */
+  int getY();
 };
 #endif  // INCLUDE_NODE_H_

@@ -8,7 +8,7 @@
  *  @section DESCRIPTION
  *
  *  This source file implements a Node class.
- *  The class contains methods to get and set 
+ *  The class contains methods to get and set
  *  coordinate values of a node, set it's status
  *  and inform whether it is a robot or goal node.
  *
@@ -19,45 +19,45 @@
 Node::Node() {
 }
 /// Constructor with initial values
-Node::Node(const int &centerX, const int &centerY, const bool &isRobot,
-           const bool &isGoal) {
+Node::Node(const int &nodeX, const int &nodeY, const bool &isRob,
+           const bool &isGl) {
 }
 /// Default destructor
 Node::~Node() {
 }
 /// get boolean value indicating if node is robot
 bool Node::isRobotBool() {
-  return true;
+  return false;
 }
 /// get boolean value indicating if node is goal
 bool Node::isGoalBool() {
-  return true;
+  return false;
 }
 /// set parent node for current node
 void Node::setParent(std::shared_ptr<Node> n) {
 }
 /// get parent Node object
 std::shared_ptr<Node> Node::getParent() {
-  return this->parent;
+  return nullptr;
 }
 /// set heuristic distance
-void Node::setHN(const int& hN) {
+void Node::setHN(const int& hn) {
 }
 /// get distance from starting node
 int Node::getHN() {
-  return -1;
+  return 0;
 }
-/// set distance from starting node
-void Node::setGN(const int& gN) {
+/// Set x value of the pixel
+void Node::setX(const int& xP) {
 }
-/// get distance from starting node
-int Node::getGN() {
-  return -1;
+/// Get x value of the pixel
+int Node::getX() {
+  return 0;
 }
-/// set functional distance
-void Node::setFN(const int& fN) {
+/// Set y value of the pixel
+void Node::setY(const int& yP) {
 }
-/// get functional distance
-int Node::getFN() {
-  return -1;
+/// Get y value of the pixel
+int Node::getY() {
+  return 0;
 }
