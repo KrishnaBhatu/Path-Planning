@@ -11,13 +11,22 @@
  *
  */
 #include <iostream>
+#include <string>
 #include <opencv2/highgui.hpp>
 #include "../include/map.h"
 #include "../include/node.h"
 int main(int argc, char** argv) {
   ///! code to read Image
   cv::Mat image;
-  image = cv::imread("../image/testMap.png" , CV_LOAD_IMAGE_COLOR);
+  if (argc == 2) {
+    std::string str(argv[1]);
+    if (str == "map1")
+      image = cv::imread("../image/testMap.png", CV_LOAD_IMAGE_COLOR);
+    else if (argc == 2 && str == "map2")
+      image = cv::imread("../image/testMap2.png", CV_LOAD_IMAGE_COLOR);
+  } else if (argc <= 1) {
+    image = cv::imread("../image/testMap.png", CV_LOAD_IMAGE_COLOR);
+  }
   if (!image.data) {
       std::cout <<  "Could not open or find the image" << std::endl;
       return -1;
