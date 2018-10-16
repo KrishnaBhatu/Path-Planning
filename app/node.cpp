@@ -14,9 +14,10 @@
  *
  */
 #include "../include/node.h"
-#include <memory>
 /// Default Constructor
 Node::Node() {
+  x = 0;
+  y = 0;
   isGoal = false;
   isRobot = false;
   hN = 0;

@@ -17,9 +17,9 @@
 Map::Map() {
   sizeX = 0;
   sizeY = 0;
-  robotX = 0;  ///< X coodinates of robot
-  robotY = 0;  ///< Y coodinates of robot
-  goalX = 480;  ///< X coodinates of goal
+  robotX = 0;
+  robotY = 0;
+  goalX = 480;
   goalY = 480;
 }
 ///! Constructor with initial values
@@ -27,6 +27,10 @@ Map::Map(const int& x, const int& y, const cv::Mat &imageMap) {
   sizeX = x;
   sizeY = y;
   image = imageMap;
+  robotX = 0;
+  robotY = 0;
+  goalX = 480;
+  goalY = 480;
 }
 ///! Default Destructor
 Map::~Map() {
@@ -86,7 +90,7 @@ void Map::readObstaclePixels() {
   cv::threshold(greyImage, threshImage, 127, 255, CV_THRESH_BINARY);
   kernel = cv::Mat::ones(10, 10, CV_32F);
   cv::erode(threshImage, dilatedImage, kernel);
-  unsigned int i = 0, j = 0;
+  int i = 0, j = 0;
   cv::MatIterator_<uchar> it, end;
   for (it = dilatedImage.begin<uchar>(), end = dilatedImage.end<uchar>();
       it != end; it++) {
@@ -102,8 +106,7 @@ void Map::readObstaclePixels() {
 }
 ///! Ask user for coordinates of robot and goal location
 bool Map::validateCoordinatesOfEndNode(const int& x, const int& y) {
-  bool isValidInput = false;
-  isValidInput = nodeCheck(x, y);
+  bool isValidInput = nodeCheck(x, y);
   if (x > 499 || y > 499 || x < 0 || y < 0) {
     isValidInput = false;
   }
@@ -122,15 +125,13 @@ bool Map::nodeCheck(int x, int y) {
       }
     }
   }
+  return notOnObstacle;
 }
 ///! Generate radom nodes in free space
 void Map::generateRandomNodes() {
   ///! create robot node
   randomNodes.emplace_back(Node(robotX, robotY, true, false));
   ///! code for generating random nodes
-  int randx = 0;
-  int randy = 0;
-  int count = 0;
   int noOfPossibleNodesi = sizeY / 10;
   int noOfPossibleNodesj = sizeX / 10;
 
@@ -262,7 +263,7 @@ while (!open.empty()) {
       }
     n_count++;
   }
-  int rNodeIndex = 0;
+    unsigned int rNodeIndex = 0;
   int rCount = 0;
   for (Node n : randomNodes) {
     if (n.getX() == open[currNode]->neighbours[index].getX()
@@ -280,8 +281,7 @@ while (!open.empty()) {
   }
 }
 ///! Print the path
-int e = 10;
-for (int i = 0; i < (open.size() - 1); i++) {
+  for (unsigned int i = 0; i < (open.size() - 1); i++) {
   cv::line(
       Map::image,
       cv::Point_<int>(open[i]->getX(), open[i]->getY()),

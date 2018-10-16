@@ -48,8 +48,6 @@ TEST(MapTest, classConstructor) {
  * @brief Test for start and end node location
  */
 TEST(MapTest, robotAndGoalLocation) {
-  int mapX = 500;
-  int mapY = 500;
   int robX = 10;
   int robY = 10;
   int goalX = 10;

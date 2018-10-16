@@ -13,7 +13,6 @@
  */
 #ifndef INCLUDE_NODE_H_
 #define INCLUDE_NODE_H_
-#include <iostream>
 #include <vector>
 #include <memory>
 class Node {
