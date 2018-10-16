@@ -176,7 +176,6 @@ After completing installation instructions, in build directory run the following
 Run tests: ./test/cpp-test
 ```
 ### How to run the program
-After completing installation instructions, in build directory run the following command-
 To run program on map 1, run the following command:
 ```
 Run program: ./app/shell-app map1
