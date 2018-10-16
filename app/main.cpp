@@ -14,9 +14,8 @@
 #include <string>
 #include <opencv2/highgui.hpp>
 #include "../include/map.h"
-#include "../include/node.h"
 int main(int argc, char** argv) {
-  ///! code to read Image
+  /// code to read Image
   cv::Mat image;
   if (argc == 2) {
     std::string str(argv[1]);
@@ -31,17 +30,17 @@ int main(int argc, char** argv) {
       std::cout <<  "Could not open or find the image" << std::endl;
       return -1;
   } else {
-    ///! initialize map object from given image
+    /// initialize map object from given image
     std::shared_ptr<Map> map;
     map = std::make_shared<Map>(image.cols, image.rows, image);
-    ///! set Obstacle Coordinates
+    /// set Obstacle Coordinates
     map->readObstaclePixels();
-    ///! Ask user for robot location
+    /// Ask user for robot location
     bool validRobot = false;
     int robotX, robotY;
     std::cout << "Please enter Robot coordinates" << std::endl;
     std::cin >> robotX >> robotY;
-    ///! since smallest node size is 10X10
+    /// since smallest node size is 10X10
     if (robotX % 10 != 0 || robotY % 10 != 0) {
       int rm = robotX % 10;
       robotX = robotX - rm;
@@ -59,12 +58,12 @@ int main(int argc, char** argv) {
     }
     map->setRobotX(robotX);
     map->setRobotY(robotY);
-    ///! Ask user for goal location
+    /// Ask user for goal location
     bool validGoal = false;
     int goalX, goalY;
     std::cout << "Please enter Goal coordinates" << std::endl;
     std::cin >> goalX >> goalY;
-    ///! since smallest node size is 10X10
+    /// since smallest node size is 10X10
     if (goalX % 10 != 0 || goalY % 10 != 0) {
       int rm = goalX % 10;
       goalX = goalX - rm;
@@ -82,12 +81,16 @@ int main(int argc, char** argv) {
     }
     map->setGoalX(goalX);
     map->setGoalY(goalY);
-    ///! Generate Random Nodes
+    /// Generate Random Nodes
     map->generateRandomNodes();
-    ///! Find neighbours and connect them
+    /// Find neighbours and connect them
     map->drawNeighbours();
-    ///! Find Optimum Path
+    /// Find Optimum Path
     map->findOptimumPath();
+    /// Display Image
+    cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE);
+    cv::imshow("Display window", map->image);
+    cv::waitKey(0);
   }
   return 0;
 }

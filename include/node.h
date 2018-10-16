@@ -32,10 +32,10 @@ class Node {
   Node();
   /**
    * @brief Constructor with initial values
-   * @param centerX ///< x coordinate of center pixel
-   * @param centerY ///< y coordinate of center pixel
-   * @param isRobot ///< check if node is robot node
-   * @param isGoal ///< check if node is goal node
+   * @param centerX x coordinate of center pixel
+   * @param centerY y coordinate of center pixel
+   * @param isRobot check if node is robot node
+   * @param isGoal check if node is goal node
    */
   Node(const int &nodeX, const int &nodeY, const bool &isRob,
        const bool &isGl);

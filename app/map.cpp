@@ -13,7 +13,7 @@
  *
  */
 #include "../include/map.h"
-///! Default Constructor
+/// Initializes parameters to zero
 Map::Map() {
   sizeX = 0;
   sizeY = 0;
@@ -22,7 +22,7 @@ Map::Map() {
   goalX = 480;
   goalY = 480;
 }
-///! Constructor with initial values
+/// Initializes parameters to user input
 Map::Map(const int& x, const int& y, const cv::Mat &imageMap) {
   sizeX = x;
   sizeY = y;
@@ -32,58 +32,58 @@ Map::Map(const int& x, const int& y, const cv::Mat &imageMap) {
   goalX = 480;
   goalY = 480;
 }
-///! Default Destructor
+/// Clears memory pointer to the object.
 Map::~Map() {
 }
-///! Get map width in pixels
+/// Returns map width in pixels
 int Map::getSizeX() {
   return sizeX;
 }
-///! Set map width
+/// Sets map width
 void Map::setSizeX(const int& x) {
   sizeX = x;
 }
-///! Get map height in pixels
+/// Returns map height in pixels
 int Map::getSizeY() {
   return sizeY;
 }
-///! Set map height
+/// Sets map height
 void Map::setSizeY(const int& y) {
   sizeY = y;
 }
-///! Get robot x coordinate
+/// Returns robot x coordinate
 int Map::getRobotX() {
   return robotX;
 }
-///! Set robot x coordinate
+/// Sets robot x coordinate
 void Map::setRobotX(const int& x) {
   robotX = x;
 }
-///! Get robot y coordinate
+/// Returns robot y coordinate
 int Map::getRobotY() {
   return robotY;
 }
-///! Set robot y coordinate
+/// Sets robot y coordinate
 void Map::setRobotY(const int& y) {
   robotY = y;
 }
-///! Get goal x coordinate
+/// Returns goal x coordinate
 int Map::getGoalX() {
   return goalX;
 }
-///! Set goal x coordinate
+/// Sets goal x coordinate
 void Map::setGoalX(const int& x) {
   goalX = x;
 }
-///! Get goal y coordinate
+/// Returns goal y coordinate
 int Map::getGoalY() {
   return goalY;
 }
-///! Set goal y coordinate
+/// Sets goal y coordinate
 void Map::setGoalY(const int& y) {
   goalY = y;
 }
-///! Read image and store obstacle coordinates
+/// Detects obstacles and stores their coordinates
 void Map::readObstaclePixels() {
   cv::Mat greyImage, threshImage, dilatedImage, kernel, sub;
   cv::cvtColor(image, greyImage, CV_BGR2GRAY);
@@ -104,7 +104,7 @@ void Map::readObstaclePixels() {
     i++;
   }
 }
-///! Ask user for coordinates of robot and goal location
+/// Validates coordinates of robot and goal location
 bool Map::validateCoordinatesOfEndNode(const int& x, const int& y) {
   bool isValidInput = nodeCheck(x, y);
   if (x > 499 || y > 499 || x < 0 || y < 0) {
@@ -112,7 +112,7 @@ bool Map::validateCoordinatesOfEndNode(const int& x, const int& y) {
   }
   return isValidInput;
 }
-///! Check if robot or goal coordinates lie on obstacle
+/// Checks if robot or goal coordinates lie on obstacle
 bool Map::nodeCheck(int x, int y) {
   bool notOnObstacle = true;
   for (int i = x; i < (x + 10); i++) {
@@ -127,11 +127,9 @@ bool Map::nodeCheck(int x, int y) {
   }
   return notOnObstacle;
 }
-///! Generate radom nodes in free space
+/// Generates radom nodes in free space
 void Map::generateRandomNodes() {
-  ///! create robot node
   randomNodes.emplace_back(Node(robotX, robotY, true, false));
-  ///! code for generating random nodes
   int noOfPossibleNodesi = sizeY / 10;
   int noOfPossibleNodesj = sizeX / 10;
 
@@ -151,9 +149,7 @@ void Map::generateRandomNodes() {
       }
     }
   }
-  ///! create goal node
   randomNodes.emplace_back(Node(goalX, goalY, false, true));
-  ///! draw nodes on image
   for (auto node : randomNodes) {
     int px1 = node.getX();
     int py1 = node.getY();
@@ -171,7 +167,7 @@ void Map::generateRandomNodes() {
     }
   }
 }
-///! Get random node in current area of image
+/// Returns random node in current area of image
 cv::Point_<int> Map::getNode(int i, int j) {
   cv::Point_<int> node;
   int randx = rand() % 4;
@@ -182,7 +178,7 @@ cv::Point_<int> Map::getNode(int i, int j) {
   node.y = ny;
   return node;
 }
-///! Generate neighbours for every node
+/// Generates neighbours for every node
 void Map::generateNeighbours() {
 std::cout << "Generating neighbours. Please wait." << std::endl;
   int dist;
@@ -232,7 +228,7 @@ std::cout << "Generating neighbours. Please wait." << std::endl;
   count++;
   }
 }
-///! Draw lines between neighbours
+/// Draws lines between neighbours
 void Map::drawNeighbours() {
   generateNeighbours();
 for (Node n : randomNodes) {
@@ -243,11 +239,10 @@ for (Node n : randomNodes) {
     }
   }
 }
-///! Find optimum path for given image and given robot coordinates
+/// Finds optimum path for given image and given robot coordinates
 void Map::findOptimumPath() {
-///! open = vector of visited nodes
   result.emplace_back(std::make_shared < Node > (randomNodes[0]));
-int currNode = 0;
+  int currNode = 0;
   while (!result.empty()) {
   int n_count = 0;
   int smallest = 800;
@@ -274,20 +269,15 @@ int currNode = 0;
 }
   currNode++;
     result.emplace_back(std::make_shared < Node > (randomNodes[rNodeIndex]));
-  ///! if final node is reached then exit.
   if (rNodeIndex == randomNodes.size() - 1) {
     break;
   }
 }
-///! Print the path
   for (unsigned int i = 0; i < (result.size() - 1); i++) {
   cv::line(
       Map::image,
       cv::Point_<int>(result[i]->getX(), result[i]->getY()),
              cv::Point_<int>(result[i + 1]->getX(), result[i + 1]->getY()),
       cv::Scalar_<double>(255, 255, 0), 3);
-}
-cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE);
-cv::imshow("Display window", Map::image);
-cv::waitKey(0);
+  }
 }

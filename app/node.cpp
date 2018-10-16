@@ -14,7 +14,7 @@
  *
  */
 #include "../include/node.h"
-/// Default Constructor
+/// Initializes parameter with zero values.
 Node::Node() {
   x = 0;
   y = 0;
@@ -22,7 +22,7 @@ Node::Node() {
   isRobot = false;
   hN = 0;
 }
-/// Constructor with initial values
+/// Initializes parameters with user input
 Node::Node(const int &nodeX, const int &nodeY, const bool &isRob,
            const bool &isGl) {
   x = nodeX;
@@ -31,38 +31,38 @@ Node::Node(const int &nodeX, const int &nodeY, const bool &isRob,
   isGoal = isGl;
   hN = 0;
 }
-/// Default destructor
+/// Clears the pointer to the object
 Node::~Node() {
 }
-/// get boolean value indicating if node is robot
+/// Returns boolean value indicating if node is robot
 bool Node::isRobotBool() {
   return isRobot;
 }
-/// get boolean value indicating if node is goal
+/// Returns boolean value indicating if node is goal
 bool Node::isGoalBool() {
   return isGoal;
 }
-/// set heuristic distance
+/// Sets heuristic distance
 void Node::setHN(const int& hn) {
   hN = hn;
 }
-/// get distance from starting node
+/// Gets distance from starting node
 int Node::getHN() {
   return hN;
 }
-/// Set x value of the pixel
+/// Sets x value of the pixel
 void Node::setX(const int& xP) {
   x = xP;
 }
-/// Get x value of the pixel
+/// Gets x value of the pixel
 int Node::getX() {
   return x;
 }
-/// Set y value of the pixel
+/// Sets y value of the pixel
 void Node::setY(const int& yP) {
   y = yP;
 }
-/// Get y value of the pixel
+/// Gets y value of the pixel
 int Node::getY() {
   return y;
 }

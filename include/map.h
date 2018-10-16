@@ -35,13 +35,13 @@ class Map{
   int goalY;  ///< Y coodinates of goal
 
  public:
-  ///< vector to store coordinates of obstacles
+  /// vector to store coordinates of obstacles
   std::vector<cv::Point_<int>> obstaclesCoordinates;
-  ///< vector to store random Nodes
+  /// vector to store random Nodes
   std::vector<Node> randomNodes;
-  ///< vector to store the resultant path
+  /// vector to store the resultant path
   std::vector<std::shared_ptr<Node>> result;
-  ///< map image
+  /// map image
   cv::Mat image;
   /**
    * @brief Default class constructor
