@@ -126,7 +126,7 @@ class Map{
    * @param y coordinate
    * return validation boolean
    */
-  bool validateCoordinatesOfEndNode(const int&x, const int&y);
+  bool validateCoordinatesOfEndNode(const int& x, const int& y);
   /**
    * @brief check if robot or goal lies on obstacle
    * @param robotX - x coordinate of robot
@@ -136,6 +136,7 @@ class Map{
   bool nodeCheck(int x, int y);
   /**
    * @brief generate random nodes in free space
+   * @return void
    */
   void generateRandomNodes();
   /**
@@ -147,10 +148,12 @@ class Map{
   cv::Point_<int> getNode(int i, int j);
   /**
    * @brief generate neighbours for each node
+   * @return void
    */
   void generateNeighbours();
   /**
    * @brief draw neighbour paths
+   * @return void
    */
   void drawNeighbours();
   /**

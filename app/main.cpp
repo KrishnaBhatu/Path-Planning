@@ -75,6 +75,8 @@ int main(int argc, char** argv) {
     map->setGoalY(goalY);
     ///! Generate Random Nodes
     map->generateRandomNodes();
+    ///! Find neighbours and connect them
+    map->drawNeighbours();
   }
   return 0;
 }

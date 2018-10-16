@@ -183,9 +183,64 @@ cv::Point_<int> Map::getNode(int i, int j) {
 }
 ///! Generate neighbours for every node
 void Map::generateNeighbours() {
+std::cout << "Generating neighbours. Please wait." << std::endl;
+  int dist;
+  double line;
+  std::vector<std::vector<Node>> neighbourVec;
+  std::vector<std::vector<int>> pathCostsTemp;
+  for (auto ncheck : randomNodes) {
+    std::vector<Node> tempN;
+    std::vector<int> tempP;
+    for (auto nAll : randomNodes) {
+      dist = sqrt(
+          pow((ncheck.getX() - nAll.getX()), 2)
+              + pow((ncheck.getY() - nAll.getY()), 2));
+      if (dist < 150) {
+        if (dist != 0) {
+          bool test = true;
+          for (auto obs : obstaclesCoordinates) {
+            line = ((obs.y - nAll.getY()) * (nAll.getX() - ncheck.getX()))
+                - ((obs.x - nAll.getX()) * (nAll.getY() - ncheck.getY()));
+            if (line == 0) {
+              if (((nAll.getX() - obs.x) <= 0 && (ncheck.getX() - obs.x) >= 0)
+|| ((nAll.getX() - obs.x) >= 0 &&
+(ncheck.getX() - obs.x) <= 0)) {
+                if (((nAll.getY() - obs.y) <= 0 && (ncheck.getY() - obs.y) >= 0)
+                    || ((nAll.getY() - obs.y) >= 0
+                        && (ncheck.getY() - obs.y) <= 0)) {
+                  test = false;
+                  break;
+                }
+                }
+              }
+            }
+          if (test) {
+            tempN.emplace_back(nAll);
+            tempP.emplace_back(dist);
+          }
+         }
+        }
+      }
+    neighbourVec.emplace_back(tempN);
+    pathCostsTemp.emplace_back(tempP);
+    }
+  int count = 0;
+  for (auto && n : randomNodes) {
+    n.neighbours = neighbourVec[count];
+    n.pathCosts = pathCostsTemp[count];
+  count++;
+  }
 }
 ///! Draw lines between neighbours
 void Map::drawNeighbours() {
+  generateNeighbours();
+for (Node n : randomNodes) {
+  for (Node nn : n.neighbours) {
+    cv::line(Map::image, cv::Point_<int>(n.getX(), n.getY()),
+        cv::Point_<int>(nn.getX(), nn.getY()),
+        cv::Scalar_<double>(160, 160, 160));
+    }
+  }
 }
 ///! Find optimum path for given image and given robot coordinates
 void Map::findOptimumPath() {
