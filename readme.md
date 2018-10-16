@@ -43,13 +43,13 @@ will be sent to the controller module.
 This project is divided in four phases. Each phase performs certain action on the image map and edits
 the parameters of the map class.
 
-###1. Obstacle Detection
+<b>1. Obstacle Detection</b>
 In this phase, a map image is taken as an input from the map building module. It is assumed that the
 mapping module gives a complete map of the floor with known dimensions of the floor and the obstacles.
 The image below shows the sample image input.
 
 <p align="center">
-<img src="image/testMap.png" width="70%" height="70%"> 
+<img src="image/testMap.png" width="60%" height="60%"> 
 </p>
 
 To be able to distinguish the obstacles from the floor, the image is first converted into a greyscale 
@@ -59,10 +59,10 @@ safety margin. This resulting white region is called as the "free space". Robot 
 navigate in the free space. Following image shows the binary image of the test input image.
 
 <p align="center">
-<img src="image/map1_0.png" width="70%" height="70%"> 
+<img src="image/map1_0.png" width="60%" height="60%"> 
 </p>
 
-###2. Random Node Generation
+<b>2. Random Node Generation</b>
 First, obstacle pixel locations are stored in a vector. Then robot and destination locations are taken from 
 the user making sure that they don't lie on the obstacles or outside the image. Finally, random nodes are 
 generated in free space. If a random node has the same location as any of the pixel in the obstacle vector, 
@@ -73,10 +73,10 @@ generated on the image. Following image shows the result of the random node gene
 * Red node: Random Node in free space.
 
 <p align="center">
-<img src="image/map1_1.png" width="70%" height="70%"> 
+<img src="image/map1_1.png" width="60%" height="60%"> 
 </p>
 
-###3. Neighbour Detection
+<b>3. Neighbour Detection</b>
 In this phase, neighbouring nodes are searched and stored for every node on the image. Two nodes are considered
 as neighbours if and only if they satisfy following two conditions:
 1. Line joining these two nodes should not intersect any obstacle pixel.
@@ -86,13 +86,13 @@ repeated for each and every node. Once all neighbouring nodes are found, they ar
 shown in the image below.
 
 <p align="center">
-<img src="image/map1_2.png" width="70%" height="70%"> 
+<img src="image/map1_2.png" width="60%" height="60%"> 
 </p>
 
-###4. Path finding
+<b>4. Path finding</b>
 This is the final phase of this module. In this phase, a greedy algorithm is used to find the optimum path between 
-the robot and the goal node. Greedy algorithm may not always produce the shortest path, but it is guaranteed to 
-find the path in moderate number of steps. 
+the robot and the goal node. <b>Greedy algorithm may not always produce the shortest path, but it is guaranteed to 
+find the path in moderate number of steps.</b> 
 Greedy algorithm works as follows:
 1. Start from the current node.
 2. Find heuristic distance of all of it's neighbours. (heuristic distance - distance from goal node)
@@ -101,7 +101,7 @@ Greedy algorithm works as follows:
 Resulting path is then displayed on the image as shown below:
 
 <p align="center">
-<img src="image/map1_3.png" width="70%" height="70%"> 
+<img src="image/map1_3.png" width="60%" height="60%"> 
 </p>
 
 ## Result
@@ -118,7 +118,7 @@ Please enter Goal coordinates
 465 444
 ```
 <p align="center">
-<img src="image/result1.png" width="70%" height="70%"> 
+<img src="image/result1.png" width="60%" height="60%"> 
 </p>
 
 ### Test for map 2
@@ -134,7 +134,7 @@ Please enter Goal coordinates
 486 420
 ```
 <p align="center">
-<img src="image/result2.png" width="70%" height="70%"> 
+<img src="image/result2.png" width="60%" height="60%"> 
 </p>
 
 ## Developement Using Solo Iterative Process (SIP) and Test-Driven Developement (TDD)
@@ -177,10 +177,14 @@ Run tests: ./test/cpp-test
 ```
 ### How to run the program
 After completing installation instructions, in build directory run the following command-
+To run program on map 1, run the following command:
 ```
-Run program: ./app/shell-app
+Run program: ./app/shell-app map1
 ```
-
+To run program on map 2, run the following command:
+```
+Run program: ./app/shell-app map2
+```
 ### Building for code coverage 
 ```
 sudo apt-get install lcov
