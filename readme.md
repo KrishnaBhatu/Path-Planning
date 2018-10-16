@@ -1,6 +1,6 @@
 # Path Planning Using Probabilistic Road Map (Using C++ and OpenCV)
 [![Build Status](https://travis-ci.org/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning.svg?branch=master)](https://travis-ci.org/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning)
-[![Coverage Status](https://coveralls.io/repos/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning/badge.svg)](https://coveralls.io/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning)
+[![Coverage Status](https://coveralls.io/repos/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning/badge.svg?branch=master)](https://coveralls.io/github/KrishnaBhatu/Probabilistic-Road-Map-Path-Planning?branch=master)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ---
 ## Team Members
