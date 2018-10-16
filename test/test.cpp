@@ -176,6 +176,35 @@ TEST(MapTest, generateNeighbours) {
   EXPECT_NEAR(75, dummyMap->randomNodes[0].pathCosts[0], 75);
 }
 /**
+ * @brief Test for optimum path generation
+ */
+TEST(MapTest, findOptimumPath) {
+  int mapX = 500;
+  int mapY = 500;
+  int robotX = 50;
+  int robotY = 50;
+  int goalX = 480;
+  int goalY = 480;
+  cv::Mat image;
+  image = cv::imread("../image/testMap.png", 1);
+  if (!image.data) {
+    std::cout << "Could not open or find the image" << std::endl;
+  }
+  std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
+  dummyMap->setRobotX(robotX);
+  dummyMap->setRobotY(robotY);
+  dummyMap->setGoalX(goalX);
+  dummyMap->setGoalY(goalY);
+  dummyMap->readObstaclePixels();
+  dummyMap->generateRandomNodes();
+  dummyMap->drawNeighbours();
+  dummyMap->findOptimumPath();
+  EXPECT_EQ(50, dummyMap->result[0]->getX());
+  EXPECT_EQ(50, dummyMap->result[0]->getY());
+  EXPECT_EQ(480, dummyMap->result[dummyMap->result.size() - 1]->getX());
+  EXPECT_EQ(480, dummyMap->result[dummyMap->result.size() - 1]->getY());
+}
+/**
  * @brief Test for Node class initialization
  */
 TEST(NodeTest, initializeNodeClass) {
@@ -203,17 +232,4 @@ TEST(NodeTest, heuristicDistance) {
   std::shared_ptr<Node> dummyNode = std::make_shared<Node>();
   dummyNode->setHN(150);
   EXPECT_EQ(150, dummyNode->getHN());
-}
-/**
- * @brief Test for parent of the node
- */
-TEST(NodeTest, nodeParent) {
-  std::shared_ptr<Node> dummyNode = std::make_shared<Node>();
-  std::shared_ptr<Node> dummyParent = std::make_shared < Node
-      > (20, 50, true, true);
-  dummyNode->setParent(dummyParent);
-  EXPECT_EQ(20, dummyNode->getParent()->getX());
-  EXPECT_EQ(50, dummyNode->getParent()->getY());
-  EXPECT_EQ(true, dummyNode->getParent()->isRobotBool());
-  EXPECT_EQ(true, dummyNode->getParent()->isGoalBool());
 }

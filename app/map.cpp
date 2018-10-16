@@ -246,14 +246,13 @@ for (Node n : randomNodes) {
 ///! Find optimum path for given image and given robot coordinates
 void Map::findOptimumPath() {
 ///! open = vector of visited nodes
-std::vector<std::shared_ptr<Node>> open;
-open.emplace_back(std::make_shared < Node > (randomNodes[0]));
+  result.emplace_back(std::make_shared < Node > (randomNodes[0]));
 int currNode = 0;
-while (!open.empty()) {
+  while (!result.empty()) {
   int n_count = 0;
   int smallest = 800;
   int index = 0;
-    for (auto && n : open[currNode]->neighbours) {
+    for (auto && n : result[currNode]->neighbours) {
     double hn = sqrt(pow((n.getX() - randomNodes[randomNodes.size()-1].getX()),
 2)+ pow((n.getY() - randomNodes[randomNodes.size()-1].getY()), 2));
   n.setHN(hn);
@@ -266,26 +265,26 @@ while (!open.empty()) {
     unsigned int rNodeIndex = 0;
   int rCount = 0;
   for (Node n : randomNodes) {
-    if (n.getX() == open[currNode]->neighbours[index].getX()
-        && n.getY() == open[currNode]->neighbours[index].getY()) {
+      if (n.getX() == result[currNode]->neighbours[index].getX()
+          && n.getY() == result[currNode]->neighbours[index].getY()) {
       rNodeIndex = rCount;
       break;
     }
   rCount++;
 }
   currNode++;
-  open.emplace_back(std::make_shared < Node > (randomNodes[rNodeIndex]));
+    result.emplace_back(std::make_shared < Node > (randomNodes[rNodeIndex]));
   ///! if final node is reached then exit.
   if (rNodeIndex == randomNodes.size() - 1) {
     break;
   }
 }
 ///! Print the path
-  for (unsigned int i = 0; i < (open.size() - 1); i++) {
+  for (unsigned int i = 0; i < (result.size() - 1); i++) {
   cv::line(
       Map::image,
-      cv::Point_<int>(open[i]->getX(), open[i]->getY()),
-           cv::Point_<int>(open[i + 1]->getX(), open[i + 1]->getY()),
+      cv::Point_<int>(result[i]->getX(), result[i]->getY()),
+             cv::Point_<int>(result[i + 1]->getX(), result[i + 1]->getY()),
       cv::Scalar_<double>(255, 255, 0), 3);
 }
 cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE);
