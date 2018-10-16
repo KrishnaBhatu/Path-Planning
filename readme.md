@@ -7,7 +7,9 @@
 #### Week 1 Sprint
  * Driver - Krishna Bhatu [Github Link](https://github.com/KrishnaBhatu)
  * Navigator - Siddhesh Rane [Github Link](https://github.com/srane96)
- 
+#### Week 2 Sprint
+ * Navigator - Siddhesh Rane [Github Link](https://github.com/srane96)
+ * Driver - Krishna Bhatu [Github Link](https://github.com/KrishnaBhatu)
 ## Overview
 This project implements a path planning module for a wheeled robot by Acme Robotics. It uses 2D path 
 planning algorithm known as PRM (Probabilistic Road Map) that would allow Acme robot to reach its 
