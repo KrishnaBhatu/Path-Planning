@@ -14,8 +14,8 @@ Done processing ./test/test.cpp
 Done processing ./test/main.cpp
 
 Total errors found: 2
-(#Comment: We tried using rand_r() function, but it is pseudo random function and
-it produces same random number for the seed provided. We also tried using time
-as a seed, but since this function is called within a second, time seed also
-remains constant. As a result, we have no option but to keep rand() to get 
+(#Comment: We tried using rand_r() and srand() functions, but they are pseudo random 
+functions and it produces same random number for the seed provided. We also tried 
+using time as a seed, but since this function is called within a second, time 
+seed also remains constant. As a result, we have no option but to keep rand() to get 
 truly random coordinates.)

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - include/node.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">include</a> - node.h<span style="font-size: 80%;"> (source / <a href="node.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-10-16 17:46:52</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /**</a>
+<span class="lineNum">       2 </span>            :  *  @copyright (c) 2018 Krishna Bhatu, Siddhesh Rane
+<span class="lineNum">       3 </span>            :  *  @file    node.h
+<span class="lineNum">       4 </span>            :  *  @author  Krishna Bhatu, Siddhesh Rane
+<span class="lineNum">       5 </span>            :  *
+<span class="lineNum">       6 </span>            :  *  @brief class for random nodes on the map
+<span class="lineNum">       7 </span>            :  *
+<span class="lineNum">       8 </span>            :  *  @section DESCRIPTION
+<span class="lineNum">       9 </span>            :  *
+<span class="lineNum">      10 </span>            :  *  Node class defines properties and functions for
+<span class="lineNum">      11 </span>            :  *  all the random nodes, robot node and goal node.
+<span class="lineNum">      12 </span>            :  *
+<span class="lineNum">      13 </span>            :  */
+<span class="lineNum">      14 </span>            : #ifndef INCLUDE_NODE_H_
+<span class="lineNum">      15 </span>            : #define INCLUDE_NODE_H_
+<a name="16"><span class="lineNum">      16 </span>            : #include &lt;vector&gt;</a>
+<span class="lineNum">      17 </span>            : #include &lt;memory&gt;
+<span class="lineNum">      18 </span><span class="lineCov">      36212 : class Node {</span>
+<span class="lineNum">      19 </span>            :  private:
+<span class="lineNum">      20 </span>            :   bool isGoal;  ///&lt; check if node is goal node
+<span class="lineNum">      21 </span>            :   bool isRobot;  ///&lt; check if node is robot node
+<span class="lineNum">      22 </span>            :   int x;  ///&lt; x coordinate of the pixel
+<span class="lineNum">      23 </span>            :   int y;  ///&lt; y coordinate of the pixel
+<span class="lineNum">      24 </span>            :   int hN;  ///&lt; heuristic distance
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span>            :  public:
+<span class="lineNum">      27 </span>            :   std::vector&lt;Node&gt; neighbours;  ///&lt; vector of all neighbours
+<span class="lineNum">      28 </span>            :   std::vector&lt;int&gt; pathCosts;  ///&lt; vector of distance to all neighbours
+<span class="lineNum">      29 </span>            :   /**
+<span class="lineNum">      30 </span>            :    * @brief Default Constructor
+<span class="lineNum">      31 </span>            :    */
+<span class="lineNum">      32 </span>            :   Node();
+<span class="lineNum">      33 </span>            :   /**
+<span class="lineNum">      34 </span>            :    * @brief Constructor with initial values
+<span class="lineNum">      35 </span>            :    * @param centerX ///&lt; x coordinate of center pixel
+<span class="lineNum">      36 </span>            :    * @param centerY ///&lt; y coordinate of center pixel
+<span class="lineNum">      37 </span>            :    * @param isRobot ///&lt; check if node is robot node
+<span class="lineNum">      38 </span>            :    * @param isGoal ///&lt; check if node is goal node
+<span class="lineNum">      39 </span>            :    */
+<span class="lineNum">      40 </span>            :   Node(const int &amp;nodeX, const int &amp;nodeY, const bool &amp;isRob,
+<span class="lineNum">      41 </span>            :        const bool &amp;isGl);
+<span class="lineNum">      42 </span>            :   /**
+<span class="lineNum">      43 </span>            :    * @brief Default destructor
+<span class="lineNum">      44 </span>            :    */
+<span class="lineNum">      45 </span>            :   ~Node();
+<span class="lineNum">      46 </span>            :   /**
+<span class="lineNum">      47 </span>            :    * @return boolean value indicating if node is robot
+<span class="lineNum">      48 </span>            :    */
+<span class="lineNum">      49 </span>            :   bool isRobotBool();
+<span class="lineNum">      50 </span>            :   /**
+<span class="lineNum">      51 </span>            :    * @return boolean value indicating if node is goal
+<span class="lineNum">      52 </span>            :    */
+<span class="lineNum">      53 </span>            :   bool isGoalBool();
+<span class="lineNum">      54 </span>            :   /**
+<span class="lineNum">      55 </span>            :    * @brief set heuristic distance
+<span class="lineNum">      56 </span>            :    * @param h_n - heuristic value
+<span class="lineNum">      57 </span>            :    * @return void
+<span class="lineNum">      58 </span>            :    */
+<span class="lineNum">      59 </span>            :   void setHN(const int&amp; hn);
+<span class="lineNum">      60 </span>            :   /**
+<span class="lineNum">      61 </span>            :    * @return distance from starting node
+<span class="lineNum">      62 </span>            :    * @return heuristic distance
+<span class="lineNum">      63 </span>            :    */
+<span class="lineNum">      64 </span>            :   int getHN();
+<span class="lineNum">      65 </span>            :   /**
+<span class="lineNum">      66 </span>            :    * @brief Set x value of the pixel
+<span class="lineNum">      67 </span>            :    * @param int value of x coordinate
+<span class="lineNum">      68 </span>            :    * @return void
+<span class="lineNum">      69 </span>            :    */
+<span class="lineNum">      70 </span>            :   void setX(const int&amp; xP);
+<span class="lineNum">      71 </span>            :   /**
+<span class="lineNum">      72 </span>            :    * @brief get x value of the pixel
+<span class="lineNum">      73 </span>            :    * @return x coordinate of the pixel
+<span class="lineNum">      74 </span>            :    */
+<span class="lineNum">      75 </span>            :   int getX();
+<span class="lineNum">      76 </span>            :   /**
+<span class="lineNum">      77 </span>            :    * @brief Set y value of the pixel
+<span class="lineNum">      78 </span>            :    * @param int value of y coordinate
+<span class="lineNum">      79 </span>            :    * @return void
+<span class="lineNum">      80 </span>            :    */
+<span class="lineNum">      81 </span>            :   void setY(const int&amp; yP);
+<span class="lineNum">      82 </span>            :   /**
+<span class="lineNum">      83 </span>            :    * @brief get y value of the pixel
+<span class="lineNum">      84 </span>            :    * @return y coordinate of the pixel
+<span class="lineNum">      85 </span>            :    */
+<span class="lineNum">      86 </span>            :   int getY();
+<span class="lineNum">      87 </span>            : };
+<span class="lineNum">      88 </span>            : #endif  // INCLUDE_NODE_H_
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

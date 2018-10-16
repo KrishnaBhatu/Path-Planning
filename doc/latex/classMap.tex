@@ -1,0 +1,448 @@
+\hypertarget{classMap}{}\section{Map Class Reference}
+\label{classMap}\index{Map@{Map}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}} ()
+\begin{DoxyCompactList}\small\item\em Default class constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMap_a57ace230b27f1782023c08bce3e9f97a}{Map}} (const int \&x, const int \&y, const cv\+::\+Mat \&image\+Map)
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMap_aa403fbe09394ccf39747588f5168e3b2}{$\sim$\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_a8f98d27258db448abb49b93be0d8149f}{get\+SizeX}} ()
+\begin{DoxyCompactList}\small\item\em get map width in pixels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a30b60d97e3738f517c4c50241798a4f5}{set\+SizeX}} (const int \&x)
+\begin{DoxyCompactList}\small\item\em set map width \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_a910e3822a911ba31cdc4d0d9d722b5a0}{get\+SizeY}} ()
+\begin{DoxyCompactList}\small\item\em get map height in pixels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a3dfcc361c0ed20779beaedbe15aea191}{set\+SizeY}} (const int \&y)
+\begin{DoxyCompactList}\small\item\em set map height \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_ae3ece0230fd6a74d2437ec33674466dd}{get\+RobotX}} ()
+\begin{DoxyCompactList}\small\item\em get robot x coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_ac170da40163e9ecda653d63b7c0e8cae}{set\+RobotX}} (const int \&x)
+\begin{DoxyCompactList}\small\item\em set robot x coordinate \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_a86363f86d8b4a1347d2b49fa389a6c8b}{get\+RobotY}} ()
+\begin{DoxyCompactList}\small\item\em get robot y coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a2bec12995e364fc691c98b9353ae29c8}{set\+RobotY}} (const int \&y)
+\begin{DoxyCompactList}\small\item\em set robot y coordinate \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_a6a69daf582036958e6a08651426b7f47}{get\+GoalX}} ()
+\begin{DoxyCompactList}\small\item\em get goal x coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a7f0ac3c595d6e3a7e94b6240e43f136c}{set\+GoalX}} (const int \&x)
+\begin{DoxyCompactList}\small\item\em set goal x coordinate \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMap_ac1ebda149c98e2226e66238a56d337c4}{get\+GoalY}} ()
+\begin{DoxyCompactList}\small\item\em get goal y coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a3d97fd965cd71e4b103c383fea065f41}{set\+GoalY}} (const int \&y)
+\begin{DoxyCompactList}\small\item\em set goal y coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a9d1151b9e6dade109c4448db724e02aa}{read\+Obstacle\+Pixels}} ()
+\begin{DoxyCompactList}\small\item\em read image and store obstacle coordinates \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMap_a6b8d35e143f94303278b4ba3e8e9a254}{validate\+Coordinates\+Of\+End\+Node}} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Validates coordinates of robot and goal location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMap_a4f6c50a5e192f6bf465c4dd6cb4a8806}{node\+Check}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em check if robot or goal lies on obstacle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a954ff479022d478a670326956a7223f6}{generate\+Random\+Nodes}} ()
+\begin{DoxyCompactList}\small\item\em generate random nodes in free space \end{DoxyCompactList}\item 
+cv\+::\+Point\+\_\+$<$ int $>$ \mbox{\hyperlink{classMap_aa0047c676dba81c3475e809b34620819}{get\+Node}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em get random node for current grid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_abd300715e729b523e97397bf11d536ea}{generate\+Neighbours}} ()
+\begin{DoxyCompactList}\small\item\em generate neighbours for each node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a8462d10dd3bdcf2c1977ab486186c51f}{draw\+Neighbours}} ()
+\begin{DoxyCompactList}\small\item\em draw neighbour paths \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a39500861019ef53953b146923dbba271}{find\+Optimum\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Find optimum path for given image and given robot coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMap_a0b7fb579f17e524e171541c657f7ca43}\label{classMap_a0b7fb579f17e524e171541c657f7ca43}} 
+std\+::vector$<$ cv\+::\+Point\+\_\+$<$ int $>$ $>$ \mbox{\hyperlink{classMap_a0b7fb579f17e524e171541c657f7ca43}{obstacles\+Coordinates}}
+\begin{DoxyCompactList}\small\item\em vector to store coordinates of obstacles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMap_af20cf58ac4a736bc136a778ba0546c80}\label{classMap_af20cf58ac4a736bc136a778ba0546c80}} 
+std\+::vector$<$ \mbox{\hyperlink{classNode}{Node}} $>$ \mbox{\hyperlink{classMap_af20cf58ac4a736bc136a778ba0546c80}{random\+Nodes}}
+\begin{DoxyCompactList}\small\item\em vector to store random Nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMap_afa8ddf2185f958b8b3d87a4452837196}\label{classMap_afa8ddf2185f958b8b3d87a4452837196}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNode}{Node}} $>$ $>$ \mbox{\hyperlink{classMap_afa8ddf2185f958b8b3d87a4452837196}{result}}
+\begin{DoxyCompactList}\small\item\em vector to store the resultant path \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMap_a855ad84d7727a8cc2cf9cfe77816d6d6}\label{classMap_a855ad84d7727a8cc2cf9cfe77816d6d6}} 
+cv\+::\+Mat \mbox{\hyperlink{classMap_a855ad84d7727a8cc2cf9cfe77816d6d6}{image}}
+\begin{DoxyCompactList}\small\item\em map image \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMap_a0f5ad0fd4563497b4214038cbca8b582}\label{classMap_a0f5ad0fd4563497b4214038cbca8b582}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default class constructor. 
+
+Initializes parameters to zero. \mbox{\Hypertarget{classMap_a57ace230b27f1782023c08bce3e9f97a}\label{classMap_a57ace230b27f1782023c08bce3e9f97a}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y,  }\item[{const cv\+::\+Mat \&}]{image\+Map }\end{DoxyParamCaption})}
+
+
+
+Constructor with initial values. 
+
+Initializes parameters to user input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & -\/ width of map in pixels \\
+\hline
+{\em sizeY} & -\/ height of map in pixels \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMap_aa403fbe09394ccf39747588f5168e3b2}\label{classMap_aa403fbe09394ccf39747588f5168e3b2}} 
+\index{Map@{Map}!````~Map@{$\sim$\+Map}}
+\index{````~Map@{$\sim$\+Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{$\sim$\+Map()}{~Map()}}
+{\footnotesize\ttfamily Map\+::$\sim$\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+Clears memory pointer to the object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMap_a8462d10dd3bdcf2c1977ab486186c51f}\label{classMap_a8462d10dd3bdcf2c1977ab486186c51f}} 
+\index{Map@{Map}!draw\+Neighbours@{draw\+Neighbours}}
+\index{draw\+Neighbours@{draw\+Neighbours}!Map@{Map}}
+\subsubsection{\texorpdfstring{draw\+Neighbours()}{drawNeighbours()}}
+{\footnotesize\ttfamily void Map\+::draw\+Neighbours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draw neighbour paths 
+
+Draws lines between neighbours.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a39500861019ef53953b146923dbba271}\label{classMap_a39500861019ef53953b146923dbba271}} 
+\index{Map@{Map}!find\+Optimum\+Path@{find\+Optimum\+Path}}
+\index{find\+Optimum\+Path@{find\+Optimum\+Path}!Map@{Map}}
+\subsubsection{\texorpdfstring{find\+Optimum\+Path()}{findOptimumPath()}}
+{\footnotesize\ttfamily void Map\+::find\+Optimum\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Find optimum path for given image and given robot coordinates. 
+
+Finds optimum path for given image and given robot coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & -\/ png image of the map \\
+\hline
+{\em robotX} & -\/ X coodinates of robot \\
+\hline
+{\em robotY} & -\/ Y coodinates of robot \\
+\hline
+{\em goalX} & -\/ X coodinates of goal \\
+\hline
+{\em goalY} & -\/ Y coodinates of goal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_abd300715e729b523e97397bf11d536ea}\label{classMap_abd300715e729b523e97397bf11d536ea}} 
+\index{Map@{Map}!generate\+Neighbours@{generate\+Neighbours}}
+\index{generate\+Neighbours@{generate\+Neighbours}!Map@{Map}}
+\subsubsection{\texorpdfstring{generate\+Neighbours()}{generateNeighbours()}}
+{\footnotesize\ttfamily void Map\+::generate\+Neighbours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generate neighbours for each node 
+
+Generates neighbours for every node.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a954ff479022d478a670326956a7223f6}\label{classMap_a954ff479022d478a670326956a7223f6}} 
+\index{Map@{Map}!generate\+Random\+Nodes@{generate\+Random\+Nodes}}
+\index{generate\+Random\+Nodes@{generate\+Random\+Nodes}!Map@{Map}}
+\subsubsection{\texorpdfstring{generate\+Random\+Nodes()}{generateRandomNodes()}}
+{\footnotesize\ttfamily void Map\+::generate\+Random\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generate random nodes in free space 
+
+Generates radom nodes in free space.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a6a69daf582036958e6a08651426b7f47}\label{classMap_a6a69daf582036958e6a08651426b7f47}} 
+\index{Map@{Map}!get\+GoalX@{get\+GoalX}}
+\index{get\+GoalX@{get\+GoalX}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Goal\+X()}{getGoalX()}}
+{\footnotesize\ttfamily int Map\+::get\+GoalX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get goal x coordinate 
+
+Returns goal x coordinate.
+
+\begin{DoxyReturn}{Returns}
+x coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_ac1ebda149c98e2226e66238a56d337c4}\label{classMap_ac1ebda149c98e2226e66238a56d337c4}} 
+\index{Map@{Map}!get\+GoalY@{get\+GoalY}}
+\index{get\+GoalY@{get\+GoalY}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Goal\+Y()}{getGoalY()}}
+{\footnotesize\ttfamily int Map\+::get\+GoalY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get goal y coordinate 
+
+Returns goal y coordinate.
+
+\begin{DoxyReturn}{Returns}
+y coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_aa0047c676dba81c3475e809b34620819}\label{classMap_aa0047c676dba81c3475e809b34620819}} 
+\index{Map@{Map}!get\+Node@{get\+Node}}
+\index{get\+Node@{get\+Node}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Node()}{getNode()}}
+{\footnotesize\ttfamily cv\+::\+Point\+\_\+$<$ int $>$ Map\+::get\+Node (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+get random node for current grid 
+
+Returns random node in current area of image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ column number \\
+\hline
+{\em j} & -\/ row number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+random point in grid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_ae3ece0230fd6a74d2437ec33674466dd}\label{classMap_ae3ece0230fd6a74d2437ec33674466dd}} 
+\index{Map@{Map}!get\+RobotX@{get\+RobotX}}
+\index{get\+RobotX@{get\+RobotX}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Robot\+X()}{getRobotX()}}
+{\footnotesize\ttfamily int Map\+::get\+RobotX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get robot x coordinate 
+
+Returns robot x coordinate.
+
+\begin{DoxyReturn}{Returns}
+x coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a86363f86d8b4a1347d2b49fa389a6c8b}\label{classMap_a86363f86d8b4a1347d2b49fa389a6c8b}} 
+\index{Map@{Map}!get\+RobotY@{get\+RobotY}}
+\index{get\+RobotY@{get\+RobotY}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Robot\+Y()}{getRobotY()}}
+{\footnotesize\ttfamily int Map\+::get\+RobotY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get robot y coordinate 
+
+Returns robot y coordinate.
+
+\begin{DoxyReturn}{Returns}
+y coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a8f98d27258db448abb49b93be0d8149f}\label{classMap_a8f98d27258db448abb49b93be0d8149f}} 
+\index{Map@{Map}!get\+SizeX@{get\+SizeX}}
+\index{get\+SizeX@{get\+SizeX}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Size\+X()}{getSizeX()}}
+{\footnotesize\ttfamily int Map\+::get\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get map width in pixels 
+
+Returns map width in pixels.
+
+\begin{DoxyReturn}{Returns}
+map width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a910e3822a911ba31cdc4d0d9d722b5a0}\label{classMap_a910e3822a911ba31cdc4d0d9d722b5a0}} 
+\index{Map@{Map}!get\+SizeY@{get\+SizeY}}
+\index{get\+SizeY@{get\+SizeY}!Map@{Map}}
+\subsubsection{\texorpdfstring{get\+Size\+Y()}{getSizeY()}}
+{\footnotesize\ttfamily int Map\+::get\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get map height in pixels 
+
+Returns map height in pixels.
+
+\begin{DoxyReturn}{Returns}
+map height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a4f6c50a5e192f6bf465c4dd6cb4a8806}\label{classMap_a4f6c50a5e192f6bf465c4dd6cb4a8806}} 
+\index{Map@{Map}!node\+Check@{node\+Check}}
+\index{node\+Check@{node\+Check}!Map@{Map}}
+\subsubsection{\texorpdfstring{node\+Check()}{nodeCheck()}}
+{\footnotesize\ttfamily bool Map\+::node\+Check (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+check if robot or goal lies on obstacle 
+
+Checks if robot or goal coordinates lie on obstacle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em robotX} & -\/ x coordinate of robot \\
+\hline
+{\em robotY} & -\/ y coordinate of robot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if input is on obstacle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a9d1151b9e6dade109c4448db724e02aa}\label{classMap_a9d1151b9e6dade109c4448db724e02aa}} 
+\index{Map@{Map}!read\+Obstacle\+Pixels@{read\+Obstacle\+Pixels}}
+\index{read\+Obstacle\+Pixels@{read\+Obstacle\+Pixels}!Map@{Map}}
+\subsubsection{\texorpdfstring{read\+Obstacle\+Pixels()}{readObstaclePixels()}}
+{\footnotesize\ttfamily void Map\+::read\+Obstacle\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read image and store obstacle coordinates 
+
+Detects obstacles and stores their coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMap_a7f0ac3c595d6e3a7e94b6240e43f136c}\label{classMap_a7f0ac3c595d6e3a7e94b6240e43f136c}} 
+\index{Map@{Map}!set\+GoalX@{set\+GoalX}}
+\index{set\+GoalX@{set\+GoalX}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Goal\+X()}{setGoalX()}}
+{\footnotesize\ttfamily void Map\+::set\+GoalX (\begin{DoxyParamCaption}\item[{const int \&}]{x }\end{DoxyParamCaption})}
+
+
+
+set goal x coordinate 
+
+Sets goal x coordinate.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a3d97fd965cd71e4b103c383fea065f41}\label{classMap_a3d97fd965cd71e4b103c383fea065f41}} 
+\index{Map@{Map}!set\+GoalY@{set\+GoalY}}
+\index{set\+GoalY@{set\+GoalY}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Goal\+Y()}{setGoalY()}}
+{\footnotesize\ttfamily void Map\+::set\+GoalY (\begin{DoxyParamCaption}\item[{const int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+set goal y coordinate 
+
+Sets goal y coordinate.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_ac170da40163e9ecda653d63b7c0e8cae}\label{classMap_ac170da40163e9ecda653d63b7c0e8cae}} 
+\index{Map@{Map}!set\+RobotX@{set\+RobotX}}
+\index{set\+RobotX@{set\+RobotX}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Robot\+X()}{setRobotX()}}
+{\footnotesize\ttfamily void Map\+::set\+RobotX (\begin{DoxyParamCaption}\item[{const int \&}]{x }\end{DoxyParamCaption})}
+
+
+
+set robot x coordinate 
+
+Sets robot x coordinate.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a2bec12995e364fc691c98b9353ae29c8}\label{classMap_a2bec12995e364fc691c98b9353ae29c8}} 
+\index{Map@{Map}!set\+RobotY@{set\+RobotY}}
+\index{set\+RobotY@{set\+RobotY}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Robot\+Y()}{setRobotY()}}
+{\footnotesize\ttfamily void Map\+::set\+RobotY (\begin{DoxyParamCaption}\item[{const int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+set robot y coordinate 
+
+Sets robot y coordinate.
+
+\begin{DoxyReturn}{Returns}
+return 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a30b60d97e3738f517c4c50241798a4f5}\label{classMap_a30b60d97e3738f517c4c50241798a4f5}} 
+\index{Map@{Map}!set\+SizeX@{set\+SizeX}}
+\index{set\+SizeX@{set\+SizeX}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Size\+X()}{setSizeX()}}
+{\footnotesize\ttfamily void Map\+::set\+SizeX (\begin{DoxyParamCaption}\item[{const int \&}]{x }\end{DoxyParamCaption})}
+
+
+
+set map width 
+
+Sets map width.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a3dfcc361c0ed20779beaedbe15aea191}\label{classMap_a3dfcc361c0ed20779beaedbe15aea191}} 
+\index{Map@{Map}!set\+SizeY@{set\+SizeY}}
+\index{set\+SizeY@{set\+SizeY}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Size\+Y()}{setSizeY()}}
+{\footnotesize\ttfamily void Map\+::set\+SizeY (\begin{DoxyParamCaption}\item[{const int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+set map height 
+
+Sets map height.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMap_a6b8d35e143f94303278b4ba3e8e9a254}\label{classMap_a6b8d35e143f94303278b4ba3e8e9a254}} 
+\index{Map@{Map}!validate\+Coordinates\+Of\+End\+Node@{validate\+Coordinates\+Of\+End\+Node}}
+\index{validate\+Coordinates\+Of\+End\+Node@{validate\+Coordinates\+Of\+End\+Node}!Map@{Map}}
+\subsubsection{\texorpdfstring{validate\+Coordinates\+Of\+End\+Node()}{validateCoordinatesOfEndNode()}}
+{\footnotesize\ttfamily bool Map\+::validate\+Coordinates\+Of\+End\+Node (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Validates coordinates of robot and goal location. 
+
+validate inputs from user 
+\begin{DoxyParams}{Parameters}
+{\em x} & coordinate \\
+\hline
+{\em y} & coordinate return validation boolean \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/include/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
+/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/app/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}

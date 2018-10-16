@@ -1,0 +1,222 @@
+\hypertarget{classNode}{}\section{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode_ad7a34779cad45d997bfd6d3d8043c75f}{Node}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode_abeab3810d389f577da145c5c79836b7d}{Node}} (const int \&nodeX, const int \&nodeY, const bool \&is\+Rob, const bool \&is\+Gl)
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode_aa0840c3cb5c7159be6d992adecd2097c}{$\sim$\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNode_ac74fc548dd704ffba0d2d2498d75c04d}{is\+Robot\+Bool}} ()
+\begin{DoxyCompactList}\small\item\em Returns boolean value indicating if node is robot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNode_afcaad545bd834248566eca68c9375fbc}{is\+Goal\+Bool}} ()
+\begin{DoxyCompactList}\small\item\em Returns boolean value indicating if node is goal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_af9e1787d05908b711d23c37b970fcc5f}{set\+HN}} (const int \&hn)
+\begin{DoxyCompactList}\small\item\em set heuristic distance \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_a1f06c65654c6eada84f33e6cc75602a2}{get\+HN}} ()
+\begin{DoxyCompactList}\small\item\em Gets distance from starting node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a2331d220046d215d86c8cb810519c59e}{setX}} (const int \&xP)
+\begin{DoxyCompactList}\small\item\em Set x value of the pixel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_a6c026e5d8c28591c6e2bd08c68619fd1}{getX}} ()
+\begin{DoxyCompactList}\small\item\em get x value of the pixel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a68c4121658504e9bd66a95c35c01d58b}{setY}} (const int \&yP)
+\begin{DoxyCompactList}\small\item\em Set y value of the pixel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_abab48a3f494994d4f456897f3372d3ae}{getY}} ()
+\begin{DoxyCompactList}\small\item\em get y value of the pixel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNode_a54be5e60515dda8ffe23855919e0da95}\label{classNode_a54be5e60515dda8ffe23855919e0da95}} 
+std\+::vector$<$ \mbox{\hyperlink{classNode}{Node}} $>$ \mbox{\hyperlink{classNode_a54be5e60515dda8ffe23855919e0da95}{neighbours}}
+\begin{DoxyCompactList}\small\item\em vector of all neighbours \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNode_a2228cf395cd98e0adcab69d9961e8d60}\label{classNode_a2228cf395cd98e0adcab69d9961e8d60}} 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classNode_a2228cf395cd98e0adcab69d9961e8d60}{path\+Costs}}
+\begin{DoxyCompactList}\small\item\em vector of distance to all neighbours \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNode_ad7a34779cad45d997bfd6d3d8043c75f}\label{classNode_ad7a34779cad45d997bfd6d3d8043c75f}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes parameter with zero values. \mbox{\Hypertarget{classNode_abeab3810d389f577da145c5c79836b7d}\label{classNode_abeab3810d389f577da145c5c79836b7d}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{const int \&}]{nodeX,  }\item[{const int \&}]{nodeY,  }\item[{const bool \&}]{is\+Rob,  }\item[{const bool \&}]{is\+Gl }\end{DoxyParamCaption})}
+
+
+
+Constructor with initial values. 
+
+Initializes parameters with user input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em centerX} & x coordinate of center pixel \\
+\hline
+{\em centerY} & y coordinate of center pixel \\
+\hline
+{\em is\+Robot} & check if node is robot node \\
+\hline
+{\em is\+Goal} & check if node is goal node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNode_aa0840c3cb5c7159be6d992adecd2097c}\label{classNode_aa0840c3cb5c7159be6d992adecd2097c}} 
+\index{Node@{Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Node()}{~Node()}}
+{\footnotesize\ttfamily Node\+::$\sim$\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+Clears the pointer to the object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNode_a1f06c65654c6eada84f33e6cc75602a2}\label{classNode_a1f06c65654c6eada84f33e6cc75602a2}} 
+\index{Node@{Node}!get\+HN@{get\+HN}}
+\index{get\+HN@{get\+HN}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+H\+N()}{getHN()}}
+{\footnotesize\ttfamily int Node\+::get\+HN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets distance from starting node. 
+
+\begin{DoxyReturn}{Returns}
+distance from starting node 
+
+heuristic distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a6c026e5d8c28591c6e2bd08c68619fd1}\label{classNode_a6c026e5d8c28591c6e2bd08c68619fd1}} 
+\index{Node@{Node}!getX@{getX}}
+\index{getX@{getX}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Node\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get x value of the pixel 
+
+Gets x value of the pixel.
+
+\begin{DoxyReturn}{Returns}
+x coordinate of the pixel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_abab48a3f494994d4f456897f3372d3ae}\label{classNode_abab48a3f494994d4f456897f3372d3ae}} 
+\index{Node@{Node}!getY@{getY}}
+\index{getY@{getY}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Node\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get y value of the pixel 
+
+Gets y value of the pixel.
+
+\begin{DoxyReturn}{Returns}
+y coordinate of the pixel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_afcaad545bd834248566eca68c9375fbc}\label{classNode_afcaad545bd834248566eca68c9375fbc}} 
+\index{Node@{Node}!is\+Goal\+Bool@{is\+Goal\+Bool}}
+\index{is\+Goal\+Bool@{is\+Goal\+Bool}!Node@{Node}}
+\subsubsection{\texorpdfstring{is\+Goal\+Bool()}{isGoalBool()}}
+{\footnotesize\ttfamily bool Node\+::is\+Goal\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns boolean value indicating if node is goal. 
+
+\begin{DoxyReturn}{Returns}
+boolean value indicating if node is goal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_ac74fc548dd704ffba0d2d2498d75c04d}\label{classNode_ac74fc548dd704ffba0d2d2498d75c04d}} 
+\index{Node@{Node}!is\+Robot\+Bool@{is\+Robot\+Bool}}
+\index{is\+Robot\+Bool@{is\+Robot\+Bool}!Node@{Node}}
+\subsubsection{\texorpdfstring{is\+Robot\+Bool()}{isRobotBool()}}
+{\footnotesize\ttfamily bool Node\+::is\+Robot\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns boolean value indicating if node is robot. 
+
+\begin{DoxyReturn}{Returns}
+boolean value indicating if node is robot 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_af9e1787d05908b711d23c37b970fcc5f}\label{classNode_af9e1787d05908b711d23c37b970fcc5f}} 
+\index{Node@{Node}!set\+HN@{set\+HN}}
+\index{set\+HN@{set\+HN}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+H\+N()}{setHN()}}
+{\footnotesize\ttfamily void Node\+::set\+HN (\begin{DoxyParamCaption}\item[{const int \&}]{hn }\end{DoxyParamCaption})}
+
+
+
+set heuristic distance 
+
+Sets heuristic distance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+\_\+n} & -\/ heuristic value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a2331d220046d215d86c8cb810519c59e}\label{classNode_a2331d220046d215d86c8cb810519c59e}} 
+\index{Node@{Node}!setX@{setX}}
+\index{setX@{setX}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+X()}{setX()}}
+{\footnotesize\ttfamily void Node\+::setX (\begin{DoxyParamCaption}\item[{const int \&}]{xP }\end{DoxyParamCaption})}
+
+
+
+Set x value of the pixel. 
+
+Sets x value of the pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & value of x coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a68c4121658504e9bd66a95c35c01d58b}\label{classNode_a68c4121658504e9bd66a95c35c01d58b}} 
+\index{Node@{Node}!setY@{setY}}
+\index{setY@{setY}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+Y()}{setY()}}
+{\footnotesize\ttfamily void Node\+::setY (\begin{DoxyParamCaption}\item[{const int \&}]{yP }\end{DoxyParamCaption})}
+
+
+
+Set y value of the pixel. 
+
+Sets y value of the pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & value of y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/include/\mbox{\hyperlink{node_8h}{node.\+h}}\item 
+/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/app/\mbox{\hyperlink{node_8cpp}{node.\+cpp}}\end{DoxyCompactItemize}

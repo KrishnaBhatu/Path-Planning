@@ -1,0 +1,89 @@
+\hypertarget{test_8cpp}{}\section{/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/test/test.cpp File Reference}
+\label{test_8cpp}\index{/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/test/test.\+cpp@{/home/siddhesh/\+Probabilistic\+\_\+\+Road\+\_\+\+Map/\+Final/\+Probabilistic-\/\+Road-\/\+Map-\/\+Path-\/\+Planning/test/test.\+cpp}}
+
+
+test class for unit testing;  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}../include/map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/node.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}opencv2/imgproc.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}opencv2/highgui.\+hpp\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test_8cpp_a4eb0f70fd78e275b11dfc87656f1a3af}\label{test_8cpp_a4eb0f70fd78e275b11dfc87656f1a3af}} 
+\mbox{\hyperlink{test_8cpp_a4eb0f70fd78e275b11dfc87656f1a3af}{T\+E\+ST}} (Map\+Test, class\+Initialization)
+\begin{DoxyCompactList}\small\item\em Test for map class initialization. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a3a80bbcc0731d3e8abaa7d8448b170e0}\label{test_8cpp_a3a80bbcc0731d3e8abaa7d8448b170e0}} 
+\mbox{\hyperlink{test_8cpp_a3a80bbcc0731d3e8abaa7d8448b170e0}{T\+E\+ST}} (Map\+Test, class\+Constructor)
+\begin{DoxyCompactList}\small\item\em Test for map class constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a4f38a22303c59f8ffa1097f522530212}\label{test_8cpp_a4f38a22303c59f8ffa1097f522530212}} 
+\mbox{\hyperlink{test_8cpp_a4f38a22303c59f8ffa1097f522530212}{T\+E\+ST}} (Map\+Test, robot\+And\+Goal\+Location)
+\begin{DoxyCompactList}\small\item\em Test for start and end node location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a0837d3e997b2955a284b0f1a3e0289de}\label{test_8cpp_a0837d3e997b2955a284b0f1a3e0289de}} 
+\mbox{\hyperlink{test_8cpp_a0837d3e997b2955a284b0f1a3e0289de}{T\+E\+ST}} (Map\+Test, obstacle\+Detect)
+\begin{DoxyCompactList}\small\item\em Test for obstacle detection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a3ca6be31c27671dda491b43f02413ae4}\label{test_8cpp_a3ca6be31c27671dda491b43f02413ae4}} 
+\mbox{\hyperlink{test_8cpp_a3ca6be31c27671dda491b43f02413ae4}{T\+E\+ST}} (Map\+Test, end\+Node\+Coordinates)
+\begin{DoxyCompactList}\small\item\em Get coordinates of end nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a28e90aa04e71c7648a1a939966136884}\label{test_8cpp_a28e90aa04e71c7648a1a939966136884}} 
+\mbox{\hyperlink{test_8cpp_a28e90aa04e71c7648a1a939966136884}{T\+E\+ST}} (Map\+Test, node\+Check)
+\begin{DoxyCompactList}\small\item\em Test to check if node is on obstacle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_ac98e1d9b4c357f16ee36ec8824c7cd5e}\label{test_8cpp_ac98e1d9b4c357f16ee36ec8824c7cd5e}} 
+\mbox{\hyperlink{test_8cpp_ac98e1d9b4c357f16ee36ec8824c7cd5e}{T\+E\+ST}} (Map\+Test, random\+Nodes)
+\begin{DoxyCompactList}\small\item\em Test to check random node generation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_abcdde2794ec60b12795bd79a6ed760a0}{T\+E\+ST}} (Map\+Test, get\+Node\+Test)
+\begin{DoxyCompactList}\small\item\em Test to get random node in current area. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_a4b72126fdcb6287cc5154023b56a5e84}{T\+E\+ST}} (Map\+Test, generate\+Neighbours)
+\begin{DoxyCompactList}\small\item\em Test to generate Neighbours. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a978b56a14b74faf522cbeb7644cd0752}\label{test_8cpp_a978b56a14b74faf522cbeb7644cd0752}} 
+\mbox{\hyperlink{test_8cpp_a978b56a14b74faf522cbeb7644cd0752}{T\+E\+ST}} (Map\+Test, find\+Optimum\+Path)
+\begin{DoxyCompactList}\small\item\em Test for optimum path generation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a1d7c4ed176dca881d17e5c311a7c3ca7}\label{test_8cpp_a1d7c4ed176dca881d17e5c311a7c3ca7}} 
+\mbox{\hyperlink{test_8cpp_a1d7c4ed176dca881d17e5c311a7c3ca7}{T\+E\+ST}} (Node\+Test, initialize\+Node\+Class)
+\begin{DoxyCompactList}\small\item\em Test for \mbox{\hyperlink{classNode}{Node}} class initialization. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_a51937a6fd6694bc50bf3597dbcb3f411}\label{test_8cpp_a51937a6fd6694bc50bf3597dbcb3f411}} 
+\mbox{\hyperlink{test_8cpp_a51937a6fd6694bc50bf3597dbcb3f411}{T\+E\+ST}} (Node\+Test, class\+Constructor)
+\begin{DoxyCompactList}\small\item\em Test for \mbox{\hyperlink{classNode}{Node}} class constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{test_8cpp_af8558a07054c87f99c6874e762658e85}\label{test_8cpp_af8558a07054c87f99c6874e762658e85}} 
+\mbox{\hyperlink{test_8cpp_af8558a07054c87f99c6874e762658e85}{T\+E\+ST}} (Node\+Test, heuristic\+Distance)
+\begin{DoxyCompactList}\small\item\em Test for heuristic distance of the \mbox{\hyperlink{classNode}{Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+test class for unit testing; 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2018 Krishna Bhatu, Siddhesh Rane
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Krishna Bhatu, Siddhesh Rane
+\end{DoxyAuthor}
+\hypertarget{test_8cpp_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{test_8cpp_DESCRIPTION}
+This file implements Google test which is unit testing library for C++ programming language. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test_8cpp_abcdde2794ec60b12795bd79a6ed760a0}\label{test_8cpp_abcdde2794ec60b12795bd79a6ed760a0}} 
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Map\+Test}]{,  }\item[{get\+Node\+Test}]{ }\end{DoxyParamCaption})}
+
+
+
+Test to get random node in current area. 
+
+! Since this random node generation range is kept high It should get node anywhere in 50X50px from given values of parameters in get\+Node(); \mbox{\Hypertarget{test_8cpp_a4b72126fdcb6287cc5154023b56a5e84}\label{test_8cpp_a4b72126fdcb6287cc5154023b56a5e84}} 
+\index{test.\+cpp@{test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Map\+Test}]{,  }\item[{generate\+Neighbours}]{ }\end{DoxyParamCaption})}
+
+
+
+Test to generate Neighbours. 
+
+! Distance between node and neighbour must within range of 0 to 150. 

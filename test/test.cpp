@@ -37,9 +37,6 @@ TEST(MapTest, classConstructor) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   EXPECT_EQ(500, dummyMap->getSizeX());
   EXPECT_EQ(500, dummyMap->getSizeY());
@@ -70,9 +67,6 @@ TEST(MapTest, obstacleDetect) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   dummyMap->readObstaclePixels();
   EXPECT_EQ(400, dummyMap->obstaclesCoordinates[0].x);
@@ -89,9 +83,6 @@ TEST(MapTest, endNodeCoordinates) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   int r1x = 55;
   int r1y = 55;
@@ -108,9 +99,6 @@ TEST(MapTest, nodeCheck) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   EXPECT_TRUE(dummyMap->nodeCheck(50, 50));
 }
@@ -122,9 +110,6 @@ TEST(MapTest, randomNodes) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   dummyMap->setRobotX(50);
   dummyMap->setRobotY(50);
@@ -145,9 +130,6 @@ TEST(MapTest, getNodeTest) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   cv::Point_<int> node;
   node = dummyMap->getNode(0, 0);
@@ -165,9 +147,6 @@ TEST(MapTest, generateNeighbours) {
   int mapY = 500;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   dummyMap->readObstaclePixels();
   dummyMap->generateRandomNodes();
@@ -187,9 +166,6 @@ TEST(MapTest, findOptimumPath) {
   int goalY = 480;
   cv::Mat image;
   image = cv::imread("../image/testMap.png", 1);
-  if (!image.data) {
-    std::cout << "Could not open or find the image" << std::endl;
-  }
   std::shared_ptr<Map> dummyMap = std::make_shared < Map > (mapX, mapY, image);
   dummyMap->setRobotX(robotX);
   dummyMap->setRobotY(robotY);
@@ -213,17 +189,20 @@ TEST(NodeTest, initializeNodeClass) {
   dummyNode->setY(50);
   EXPECT_EQ(50, dummyNode->getX());
   EXPECT_EQ(50, dummyNode->getY());
+  EXPECT_FALSE(dummyNode->isRobotBool());
+  EXPECT_FALSE(dummyNode->isGoalBool());
+  EXPECT_EQ(0, dummyNode->getHN());
 }
 /**
  * @brief Test for Node class constructor
  */
 TEST(NodeTest, classConstructor) {
   std::shared_ptr<Node> dummyNode = std::make_shared < Node
-      > (50, 100, true, true);
+      > (50, 100, true, false);
   EXPECT_EQ(50, dummyNode->getX());
   EXPECT_EQ(100, dummyNode->getY());
-  EXPECT_EQ(true, dummyNode->isRobotBool());
-  EXPECT_EQ(true, dummyNode->isGoalBool());
+  EXPECT_TRUE(dummyNode->isRobotBool());
+  EXPECT_FALSE(dummyNode->isGoalBool());
 }
 /**
  * @brief Test for heuristic distance of the Node
