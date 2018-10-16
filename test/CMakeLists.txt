@@ -9,8 +9,7 @@ add_executable(
     main.cpp
     test.cpp
     ../app/map.cpp
-    ../app/node.cpp
-    ../app/pixel.cpp	
+    ../app/node.cpp	
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

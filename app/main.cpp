@@ -77,6 +77,8 @@ int main(int argc, char** argv) {
     map->generateRandomNodes();
     ///! Find neighbours and connect them
     map->drawNeighbours();
+    ///! Find Optimum Path
+    map->findOptimumPath();
   }
   return 0;
 }
