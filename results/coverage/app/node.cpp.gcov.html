@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - app/node.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">app</a> - node.cpp<span style="font-size: 80%;"> (source / <a href="node.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-10-16 16:35:33</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /**</a>
+<span class="lineNum">       2 </span>            :  *  @copyright (c) 2018 Krishna Bhatu, Siddhesh Rane
+<span class="lineNum">       3 </span>            :  *  @file    node.cpp
+<span class="lineNum">       4 </span>            :  *  @author  Krishna Bhatu, Siddhesh Rane
+<span class="lineNum">       5 </span>            :  *
+<span class="lineNum">       6 </span>            :  *  @brief class for pixel on an image;
+<span class="lineNum">       7 </span>            :  *
+<span class="lineNum">       8 </span>            :  *  @section DESCRIPTION
+<span class="lineNum">       9 </span>            :  *
+<span class="lineNum">      10 </span>            :  *  This source file implements a Node class.
+<span class="lineNum">      11 </span>            :  *  The class contains methods to get and set
+<span class="lineNum">      12 </span>            :  *  coordinate values of a node, set it's status
+<span class="lineNum">      13 </span>            :  *  and inform whether it is a robot or goal node.
+<span class="lineNum">      14 </span>            :  *
+<span class="lineNum">      15 </span>            :  */
+<a name="16"><span class="lineNum">      16 </span>            : #include &quot;../include/node.h&quot;</a>
+<span class="lineNum">      17 </span>            : /// Default Constructor
+<span class="lineNum">      18 </span><span class="lineCov">          2 : Node::Node() {</span>
+<span class="lineNum">      19 </span><span class="lineCov">          2 :   x = 0;</span>
+<span class="lineNum">      20 </span><span class="lineCov">          2 :   y = 0;</span>
+<span class="lineNum">      21 </span><span class="lineCov">          2 :   isGoal = false;</span>
+<span class="lineNum">      22 </span><span class="lineCov">          2 :   isRobot = false;</span>
+<span class="lineNum">      23 </span><span class="lineCov">          2 :   hN = 0;</span>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      25 </span>            : /// Constructor with initial values
+<span class="lineNum">      26 </span><span class="lineCov">        283 : Node::Node(const int &amp;nodeX, const int &amp;nodeY, const bool &amp;isRob,</span>
+<span class="lineNum">      27 </span><span class="lineCov">        283 :            const bool &amp;isGl) {</span>
+<span class="lineNum">      28 </span><span class="lineCov">        283 :   x = nodeX;</span>
+<span class="lineNum">      29 </span><span class="lineCov">        283 :   y = nodeY;</span>
+<span class="lineNum">      30 </span><span class="lineCov">        283 :   isRobot = isRob;</span>
+<span class="lineNum">      31 </span><span class="lineCov">        283 :   isGoal = isGl;</span>
+<span class="lineNum">      32 </span><span class="lineCov">        283 :   hN = 0;</span>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">        283 : }</span></a>
+<span class="lineNum">      34 </span>            : /// Default destructor
+<span class="lineNum">      35 </span><span class="lineCov">      36497 : Node::~Node() {</span>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">      36497 : }</span></a>
+<span class="lineNum">      37 </span>            : /// get boolean value indicating if node is robot
+<span class="lineNum">      38 </span><span class="lineCov">        283 : bool Node::isRobotBool() {</span>
+<span class="lineNum">      39 </span><span class="lineCov">        283 :   return isRobot;</span>
+<a name="40"><span class="lineNum">      40 </span>            : }</a>
+<span class="lineNum">      41 </span>            : /// get boolean value indicating if node is goal
+<span class="lineNum">      42 </span><span class="lineCov">        280 : bool Node::isGoalBool() {</span>
+<span class="lineNum">      43 </span><span class="lineCov">        280 :   return isGoal;</span>
+<a name="44"><span class="lineNum">      44 </span>            : }</a>
+<span class="lineNum">      45 </span>            : /// set heuristic distance
+<span class="lineNum">      46 </span><span class="lineCov">         79 : void Node::setHN(const int&amp; hn) {</span>
+<span class="lineNum">      47 </span><span class="lineCov">         79 :   hN = hn;</span>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         79 : }</span></a>
+<span class="lineNum">      49 </span>            : /// get distance from starting node
+<span class="lineNum">      50 </span><span class="lineCov">        132 : int Node::getHN() {</span>
+<span class="lineNum">      51 </span><span class="lineCov">        132 :   return hN;</span>
+<a name="52"><span class="lineNum">      52 </span>            : }</a>
+<span class="lineNum">      53 </span>            : /// Set x value of the pixel
+<span class="lineNum">      54 </span><span class="lineCov">          1 : void Node::setX(const int&amp; xP) {</span>
+<span class="lineNum">      55 </span><span class="lineCov">          1 :   x = xP;</span>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      57 </span>            : /// Get x value of the pixel
+<span class="lineNum">      58 </span><span class="lineCov">  461755210 : int Node::getX() {</span>
+<span class="lineNum">      59 </span><span class="lineCov">  461755210 :   return x;</span>
+<a name="60"><span class="lineNum">      60 </span>            : }</a>
+<span class="lineNum">      61 </span>            : /// Set y value of the pixel
+<span class="lineNum">      62 </span><span class="lineCov">          1 : void Node::setY(const int&amp; yP) {</span>
+<span class="lineNum">      63 </span><span class="lineCov">          1 :   y = yP;</span>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      65 </span>            : /// Get y value of the pixel
+<span class="lineNum">      66 </span><span class="lineCov">  461601589 : int Node::getY() {</span>
+<span class="lineNum">      67 </span><span class="lineCov">  461601589 :   return y;</span>
+<span class="lineNum">      68 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

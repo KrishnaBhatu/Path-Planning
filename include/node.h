@@ -21,7 +21,6 @@ class Node {
   bool isRobot;  ///< check if node is robot node
   int x;  ///< x coordinate of the pixel
   int y;  ///< y coordinate of the pixel
-  std::shared_ptr<Node> parent;  ///< parent node
   int hN;  ///< heuristic distance
 
  public:
@@ -52,16 +51,6 @@ class Node {
    * @return boolean value indicating if node is goal
    */
   bool isGoalBool();
-  /**
-   * @brief set parent node for current node
-   * @param Node object
-   * @return void
-   */
-  void setParent(std::shared_ptr<Node> n);
-  /**
-   * @return parent Node object
-   */
-  std::shared_ptr<Node> getParent();
   /**
    * @brief set heuristic distance
    * @param h_n - heuristic value

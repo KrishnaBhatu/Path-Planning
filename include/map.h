@@ -39,6 +39,8 @@ class Map{
   std::vector<cv::Point_<int>> obstaclesCoordinates;
   ///< vector to store random Nodes
   std::vector<Node> randomNodes;
+  ///< vector to store the resultant path
+  std::vector<std::shared_ptr<Node>> result;
   ///< map image
   cv::Mat image;
   /**

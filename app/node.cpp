@@ -42,14 +42,6 @@ bool Node::isRobotBool() {
 bool Node::isGoalBool() {
   return isGoal;
 }
-/// set parent node for current node
-void Node::setParent(std::shared_ptr<Node> n) {
-  parent = n;
-}
-/// get parent Node object
-std::shared_ptr<Node> Node::getParent() {
-  return parent;
-}
 /// set heuristic distance
 void Node::setHN(const int& hn) {
   hN = hn;
