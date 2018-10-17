@@ -1,0 +1,457 @@
+Valgrind Output:
+
+valgrind --leak-check=full ./app/shell-app ==13376== Memcheck, a memory error detector
+==13376== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==13376== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==13376== Command: ./app/shell-app
+==13376== 
+Please enter Robot coordinates
+50 50
+Please enter Goal coordinates
+480 480
+Generating neighbours. Please wait.
+==13376== 
+==13376== HEAP SUMMARY:
+==13376==     in use at exit: 970,833 bytes in 10,682 blocks
+==13376==   total heap usage: 32,706 allocs, 22,024 frees, 7,407,430 bytes allocated
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,261 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945522: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92930B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,262 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945406: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92930B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,263 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945522: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA929371: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,264 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945406: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA929371: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,265 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945522: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA932B04: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923181: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,266 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945406: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA932B04: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923181: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,267 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945522: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92DC1B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923186: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,268 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945406: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F90: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92DC1B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923186: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 16 bytes in 1 blocks are possibly lost in loss record 1,269 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA7B8: g_malloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD19C2: g_slice_alloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA923309: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92337E: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94442D: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944803: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94759A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94B81F: g_type_add_interface_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x9B564D5: gtk_action_get_type (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0x9B5A09B: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA944CA0: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376== 
+==13376== 16 bytes in 1 blocks are definitely lost in loss record 1,270 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA7B8: g_malloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD19C2: g_slice_alloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD205D: g_slice_alloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB1DA9: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB4F54: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB53EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB5711: g_main_loop_run (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xD9129D5: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xABDBC54: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xAE836B9: start_thread (pthread_create.c:333)
+==13376==    by 0x981F41C: clone (clone.S:109)
+==13376== 
+==13376== 24 bytes in 1 blocks are possibly lost in loss record 1,683 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9483B5: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA947E2C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA937147: g_param_spec_flags (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x9D352E0: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA94822C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA947E2C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA947E2C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x15350482: gtk_module_init (in /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so)
+==13376==    by 0x9C2AC80: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA927FA4: g_closure_invoke (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376== 
+==13376== 32 bytes in 1 blocks are possibly lost in loss record 2,642 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9483B5: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA947E2C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA937057: g_param_spec_enum (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x9C7E559: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA94822C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92EDAC: g_object_newv (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F533: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x9C7BEF8: gtk_settings_get_for_screen (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0x9C2B560: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA92B0A6: g_cclosure_marshal_VOID__OBJECTv (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376== 
+==13376== 32 bytes in 1 blocks are possibly lost in loss record 2,643 of 5,870
+==13376==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9449D8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94A2CC: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92953D: g_flags_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xD8C6486: g_tls_certificate_flags_get_type (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD8ABF61: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xA94822C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92EDAC: g_object_newv (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F533: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xD8F60F7: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD8F66A7: g_dbus_address_get_stream_sync (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376== 
+==13376== 48 (24 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 3,365 of 5,870
+==13376==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA7B8: g_malloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD19C2: g_slice_alloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD205D: g_slice_alloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB442C: g_main_context_push_thread_default (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xD9129CC: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xABDBC54: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xAE836B9: start_thread (pthread_create.c:333)
+==13376==    by 0x981F41C: clone (clone.S:109)
+==13376== 
+==13376== 80 bytes in 1 blocks are possibly lost in loss record 4,259 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9483B5: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA947E2C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94B247: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA9330D2: g_param_spec_internal (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA937661: g_param_spec_object (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA14DE7B: ??? (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA94822C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92EDAC: g_object_newv (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F533: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA14E064: gdk_display_manager_get (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376== 
+==13376== 96 bytes in 1 blocks are possibly lost in loss record 5,084 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA944A59: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944B43: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA9230AA: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 96 bytes in 1 blocks are possibly lost in loss record 5,085 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA944A59: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944B43: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F82: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92930B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 96 bytes in 1 blocks are possibly lost in loss record 5,086 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA944A59: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944B43: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F82: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA929371: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 96 bytes in 1 blocks are possibly lost in loss record 5,087 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA944A59: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944B43: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F82: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA932B04: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923181: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 96 bytes in 1 blocks are possibly lost in loss record 5,088 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA944A59: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA944B43: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949F82: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92DC1B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923186: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 132 bytes in 1 blocks are possibly lost in loss record 5,382 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945DFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949FE0: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92930B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 132 bytes in 1 blocks are possibly lost in loss record 5,383 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945DFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949FE0: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA929371: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923177: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 148 bytes in 1 blocks are possibly lost in loss record 5,440 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945BD6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949FE0: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA932B04: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923181: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 148 bytes in 1 blocks are possibly lost in loss record 5,441 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA945BD6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA949FE0: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92DC1B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA923186: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 184 bytes in 1 blocks are possibly lost in loss record 5,516 of 5,870
+==13376==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9449D8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94A2CC: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA934799: g_param_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA936AFB: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92318B: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==13376==    by 0x40107CA: call_init (dl-init.c:30)
+==13376==    by 0x40107CA: _dl_init (dl-init.c:120)
+==13376==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==13376== 
+==13376== 312 bytes in 1 blocks are possibly lost in loss record 5,625 of 5,870
+==13376==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9449D8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94A2CC: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92943D: g_enum_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA70A61A: gdk_colorspace_get_type (in /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2)
+==13376==    by 0xA6FC398: ??? (in /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2)
+==13376==    by 0xA94822C: g_type_class_ref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F3A3: g_object_new_valist (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F520: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA6FF324: gdk_pixbuf_new_from_data (in /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2)
+==13376==    by 0x4E45140: cvImageWidget_expose(_GtkWidget*, _GdkEventExpose*, void*) (in /usr/local/lib/libopencv_highgui.so.3.4.1)
+==13376== 
+==13376== 336 bytes in 1 blocks are possibly lost in loss record 5,635 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
+==13376==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
+==13376==    by 0xAE8426E: allocate_stack (allocatestack.c:588)
+==13376==    by 0xAE8426E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==13376==    by 0xABF98FF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBF2E: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBFE7: g_thread_new (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0x18219256: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376==    by 0x1821931A: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376==    by 0x1821731D: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376==    by 0xA92D896: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F1B4: g_object_new_valist (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA92F520: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376== 
+==13376== 336 bytes in 1 blocks are possibly lost in loss record 5,636 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
+==13376==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
+==13376==    by 0xAE8426E: allocate_stack (allocatestack.c:588)
+==13376==    by 0xAE8426E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==13376==    by 0xABF98FF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBF2E: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBFE7: g_thread_new (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB6270: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xD8B5E16: g_task_get_type (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD9136D0: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD9072D6: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD907992: g_bus_get_sync (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0x18219077: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376== 
+==13376== 336 bytes in 1 blocks are definitely lost in loss record 5,637 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
+==13376==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
+==13376==    by 0xAE8426E: allocate_stack (allocatestack.c:588)
+==13376==    by 0xAE8426E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==13376==    by 0xABF98FF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBF2E: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABDBFE7: g_thread_new (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xD913743: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD9072D6: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xD907992: g_bus_get_sync (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0x18219077: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376==    by 0x18219159: ??? (in /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so)
+==13376==    by 0xABB5049: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376== 
+==13376== 464 bytes in 1 blocks are possibly lost in loss record 5,683 of 5,870
+==13376==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA877: g_realloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xA9449D8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94A2CC: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA94A694: g_type_register_static_simple (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==13376==    by 0xA155E93: gdk_keymap_get_type (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA18D161: gdk_keymap_get_for_display (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA184F97: ??? (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA187035: ??? (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA187BB5: ??? (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xA187C5D: ??? (in /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30)
+==13376==    by 0xABB5196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376== 
+==13376== 960 bytes in 3 blocks are possibly lost in loss record 5,761 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
+==13376==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
+==13376==    by 0xAE8426E: allocate_stack (allocatestack.c:588)
+==13376==    by 0xAE8426E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==13376==    by 0x8240624: cv::WorkerThread::WorkerThread(cv::ThreadPool&, unsigned int) (in /usr/local/lib/libopencv_core.so.3.4.1)
+==13376==    by 0x82422A7: cv::ThreadPool::reconfigure_(unsigned int) (in /usr/local/lib/libopencv_core.so.3.4.1)
+==13376==    by 0x8242A1A: cv::ThreadPool::run(cv::Range const&, cv::ParallelLoopBody const&, double) (in /usr/local/lib/libopencv_core.so.3.4.1)
+==13376==    by 0x81AB05D: cv::parallel_for_(cv::Range const&, cv::ParallelLoopBody const&, double) (in /usr/local/lib/libopencv_core.so.3.4.1)
+==13376==    by 0x587C690: cv::hal::cvtBGRtoGray(unsigned char const*, unsigned long, unsigned char*, unsigned long, int, int, int, int, bool) (in /usr/local/lib/libopencv_imgproc.so.3.4.1)
+==13376==    by 0x588C6E6: cv::cvtColor(cv::_InputArray const&, cv::_OutputArray const&, int, int) (in /usr/local/lib/libopencv_imgproc.so.3.4.1)
+==13376==    by 0x41B23C: Map::readObstaclePixels() (map.cpp:89)
+==13376==    by 0x415E7F: main (main.cpp:37)
+==13376== 
+==13376== 2,032 bytes in 1 blocks are definitely lost in loss record 5,805 of 5,870
+==13376==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13376==    by 0xABBA810: g_malloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD1C2B: g_slice_alloc (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABD205D: g_slice_alloc0 (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xABB442C: g_main_context_push_thread_default (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xD9129CC: ??? (in /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2)
+==13376==    by 0xABDBC54: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+==13376==    by 0xAE836B9: start_thread (pthread_create.c:333)
+==13376==    by 0x981F41C: clone (clone.S:109)
+==13376== 
+==13376== LEAK SUMMARY:
+==13376==    definitely lost: 2,408 bytes in 4 blocks
+==13376==    indirectly lost: 24 bytes in 1 blocks
+==13376==      possibly lost: 3,944 bytes in 30 blocks
+==13376==    still reachable: 846,721 bytes in 9,971 blocks
+==13376==                       of which reachable via heuristic:
+==13376==                         length64           : 6,280 bytes in 97 blocks
+==13376==                         newarray           : 1,968 bytes in 43 blocks
+==13376==         suppressed: 0 bytes in 0 blocks
+==13376== Reachable blocks (those to which a pointer was found) are not shown.
+==13376== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==13376== 
+==13376== For counts of detected and suppressed errors, rerun with: -v
+==13376== ERROR SUMMARY: 32 errors from 32 contexts (suppressed: 0 from 0)
+
+
+COMMENTS: These are the valgrind output without supressions, we can see that all the errors are not related to the code, these are the errors
+ due to the external library(OpenCV) and also from linux-gnu. Hence, we suppress the errors in the next step.
+
