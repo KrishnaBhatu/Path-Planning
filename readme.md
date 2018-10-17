@@ -127,11 +127,11 @@ $./app/shell-app map2
 ```
 ```
 Please enter Robot coordinates
-44 45
+470 25
 ```
 ```
 Please enter Goal coordinates
-486 420
+69 430
 ```
 <p align="center">
 <img src="image/result2.png" width="60%" height="60%"> 
